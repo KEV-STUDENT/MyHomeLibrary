@@ -1,0 +1,23 @@
+﻿<Window x:Class="MyHomeLibraryScaner.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MyHomeLibraryScaner"
+        mc:Ignorable="d"
+        Title="My Home Library Scaner" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto">
+            </RowDefinition>
+            <RowDefinition>
+            </RowDefinition>
+        </Grid.RowDefinitions>
+        <DockPanel x:Name="Dir4Scann_Select" LastChildFill="True">
+            <TextBlock x:Name="text1" Margin="5" DockPanel.Dock="Left" Text="Select Directory"/>
+            <Button x:Name="selLibPath" Margin="5" Padding="5,0,5,0" DockPanel.Dock="Right" Content="..." Click ="SetLibPath_Click"/>
+            <TextBox x:Name="libPath" Margin="0,5,0,5"/>
+        </DockPanel>
+        <TreeView x:Name="directoryTree" Grid.Row="1" Margin="5"/>
+    </Grid>
+</Window>

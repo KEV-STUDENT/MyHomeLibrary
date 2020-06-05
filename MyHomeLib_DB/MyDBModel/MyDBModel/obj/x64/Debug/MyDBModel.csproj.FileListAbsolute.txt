@@ -1,0 +1,16 @@
+D:\MyHomeLibrary\MyHomeLib_DB\MyDBModel\MyDBModel\bin\x64\Debug\MyDBModel.dll.config
+D:\MyHomeLibrary\MyHomeLib_DB\MyDBModel\MyDBModel\bin\x64\Debug\MyDBModel.dll
+D:\MyHomeLibrary\MyHomeLib_DB\MyDBModel\MyDBModel\bin\x64\Debug\MyDBModel.pdb
+D:\MyHomeLibrary\MyHomeLib_DB\MyDBModel\MyDBModel\bin\x64\Debug\EntityFramework.dll
+D:\MyHomeLibrary\MyHomeLib_DB\MyDBModel\MyDBModel\bin\x64\Debug\EntityFramework.SqlServer.dll
+D:\MyHomeLibrary\MyHomeLib_DB\MyDBModel\MyDBModel\bin\x64\Debug\System.Data.SQLite.dll
+D:\MyHomeLibrary\MyHomeLib_DB\MyDBModel\MyDBModel\bin\x64\Debug\System.Data.SQLite.EF6.dll
+D:\MyHomeLibrary\MyHomeLib_DB\MyDBModel\MyDBModel\bin\x64\Debug\System.Data.SQLite.Linq.dll
+D:\MyHomeLibrary\MyHomeLib_DB\MyDBModel\MyDBModel\bin\x64\Debug\EntityFramework.xml
+D:\MyHomeLibrary\MyHomeLib_DB\MyDBModel\MyDBModel\bin\x64\Debug\EntityFramework.SqlServer.xml
+D:\MyHomeLibrary\MyHomeLib_DB\MyDBModel\MyDBModel\bin\x64\Debug\System.Data.SQLite.xml
+D:\MyHomeLibrary\MyHomeLib_DB\MyDBModel\MyDBModel\bin\x64\Debug\System.Data.SQLite.dll.config
+D:\MyHomeLibrary\MyHomeLib_DB\MyDBModel\MyDBModel\obj\x64\Debug\MyDBModel.csproj.CoreCompileInputs.cache
+D:\MyHomeLibrary\MyHomeLib_DB\MyDBModel\MyDBModel\obj\x64\Debug\MyDBModel.csproj.CopyComplete
+D:\MyHomeLibrary\MyHomeLib_DB\MyDBModel\MyDBModel\obj\x64\Debug\MyDBModel.dll
+D:\MyHomeLibrary\MyHomeLib_DB\MyDBModel\MyDBModel\obj\x64\Debug\MyDBModel.pdb

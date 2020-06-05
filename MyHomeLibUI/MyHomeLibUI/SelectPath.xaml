@@ -1,0 +1,14 @@
+﻿<UserControl x:Class="MyHomeLibUI.SelectPath"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:MyHomeLibUI"
+             mc:Ignorable="d" 
+            d:DesignWidth="400">
+    <DockPanel x:Name="PathFileSelect" LastChildFill="True"  Height="Auto">
+        <TextBlock x:Name="selText" Margin="5" DockPanel.Dock="Left"/>
+        <Button x:Name="selLibPath" Margin="5" Padding="5,0,5,0" DockPanel.Dock="Right" Content="..." Click ="SelLibPath_Click"/>
+        <TextBox x:Name="libPath" Margin="0,5,0,5" Text="{Binding Path=Result,Mode=TwoWay}"/>
+    </DockPanel>
+</UserControl>

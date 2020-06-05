@@ -1,0 +1,40 @@
+﻿<Window x:Class="MyHomeLibraryScaner.ScannerMainForm"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MyHomeLibraryScaner"
+        xmlns:ui="clr-namespace:MyHomeLibUI;assembly=MyHomeLibUI"
+        mc:Ignorable="d"
+        x:Name="mw"
+        Title="ScannerMainForm" Height="450" Width="800">
+    <Grid x:Name="formGrid">
+        <Grid.RowDefinitions>
+            <RowDefinition>
+            </RowDefinition>
+            <RowDefinition Height="Auto">
+            </RowDefinition>
+            <!--RowDefinition Height="Auto">
+            </-->
+        </Grid.RowDefinitions>
+        <Grid x:Name="commandGrid" Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition Width="Auto"></ColumnDefinition>
+                <ColumnDefinition Width="Auto"></ColumnDefinition>
+                <ColumnDefinition Width="Auto"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <ui:LibButton_Previous x:Name="Previous" Margin="5,0,5,5" Padding="5,0,5,0" Grid.Column="1"
+                                   Height="26" VerticalAlignment="Bottom" 
+                                   Visibility="Hidden" Click="Previous_Click"/>
+            <ui:LibButton_Ok x:Name="Ok" Margin="5" Padding="5,0,5,0" Grid.Column="2"
+                               Visibility="Hidden"  Click="Ok_Click"/>
+            <ui:LibButton_Next x:Name="Next" Margin="5" Padding="5,0,5,0" Grid.Column="2"
+                                   Visibility="Visible" Click="Next_Click" />
+            <ui:LibButton_Cancel x:Name="Cancel" Margin="5" Padding="5,0,5,0" Grid.Column="3" Click ="Cancel_Click" />
+            <!--Click ="MovePrevios"/-->
+        </Grid>
+        <ui:OptionPage x:Name="Page1" Grid.Row="0"></ui:OptionPage>
+        <ui:FB2Page x:Name="Page2" Grid.Row="0" Visibility="Collapsed"></ui:FB2Page>
+    </Grid>
+</Window>
