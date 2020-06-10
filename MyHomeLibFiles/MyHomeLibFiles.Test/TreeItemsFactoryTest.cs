@@ -128,5 +128,21 @@ namespace MyHomeLibFiles.Test
             ITreeViewItem item = TreeItemsFactory.GetItem(zip, fb2);
             Assert.IsInstanceOfType(item, typeof(TreeViewItem_FileFB2));
         }
+
+        [TestMethod]
+        public void GetItem_Attribute_AttributeName()
+        {
+            string str = "Test:Value";
+            TreeViewItem_Attribute item = (TreeViewItem_Attribute)TreeItemsFactory.GetItem(str);
+            Assert.AreEqual<string>("Test", item.AttributeName);
+        }
+
+        public void GetItem_Attribute_AttributeValue()
+        {
+            string str = "Test:Value";
+            TreeViewItem_Attribute item = (TreeViewItem_Attribute)TreeItemsFactory.GetItem(str);
+            Assert.AreEqual<string>("Value", item.AttributeValue);
+        }
+
     }
 }

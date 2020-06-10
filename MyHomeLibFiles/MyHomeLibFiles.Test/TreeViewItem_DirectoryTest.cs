@@ -26,7 +26,7 @@ namespace MyHomeLibFiles.Test
             {
                 i++;
             }
-            Assert.AreEqual<int>(i, 8);
+            Assert.AreEqual<int>(12, i);
         }
 
         [TestMethod]

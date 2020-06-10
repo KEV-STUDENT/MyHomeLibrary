@@ -66,5 +66,24 @@ namespace MyHomeLibBizLogic
             }
             return false;
         }
+
+        public int FillContextFromItemView(MyDBUpdater dbu, ITreeViewItem item)
+        {
+            int result = 0;
+
+            foreach (var i in item.GetChilds_Items())
+            {
+                if (i.Type == ItemType.Attribute)
+                {
+                    Debug.WriteLine(i.Name);
+                }
+                else
+                {
+                    Debug.WriteLine(i.Type);
+                }
+            }
+
+            return result;
+        }
     }
 }

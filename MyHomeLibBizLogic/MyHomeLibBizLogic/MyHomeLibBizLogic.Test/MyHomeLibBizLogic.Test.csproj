@@ -56,6 +56,7 @@
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
     <Reference Include="System.Data.SQLite, Version=1.0.113.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Data.SQLite.Core.1.0.113.1\lib\net46\System.Data.SQLite.dll</HintPath>
     </Reference>
@@ -75,6 +76,14 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\..\MyHomeLibFiles\MyHomeLibFiles\MyHomeLibFiles.csproj">
+      <Project>{ac7e736a-1b57-49de-aacf-4bc2036278dd}</Project>
+      <Name>MyHomeLibFiles</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\MyHomeLib_DB\MyDBModel\MyDBModel\MyDBModel.csproj">
+      <Project>{97fa248f-3914-4189-ae20-fd9afee46e3a}</Project>
+      <Name>MyDBModel</Name>
+    </ProjectReference>
     <ProjectReference Include="..\MyHomeLibBizLogic\MyHomeLibBizLogic.csproj">
       <Project>{c7fe76c9-e808-4e21-97b2-411cfd1401b8}</Project>
       <Name>MyHomeLibBizLogic</Name>

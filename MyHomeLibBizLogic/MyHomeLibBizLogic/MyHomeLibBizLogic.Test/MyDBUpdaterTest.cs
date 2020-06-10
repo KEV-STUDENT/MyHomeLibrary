@@ -1,5 +1,8 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using MyHomeLibFiles;
+using MyDBModel;
+using System.Data.Common;
 
 namespace MyHomeLibBizLogic.Test
 {
@@ -62,5 +65,23 @@ namespace MyHomeLibBizLogic.Test
             dbu.FileSource = file_ZIP;
             Assert.IsTrue(dbu.ProcessUpdate());
         }
+
+        [TestMethod]
+        public void MyDBUpdater_FillContextFromItemView_FB2()
+        {
+            string fileSource = @"C:\librus_MyHomeLib\Davydov_Moskovit.454563.fb2";
+            string fileDB = @"c:\1\TEST_3.sqlite";
+
+            ITreeViewItem item = TreeItemsFactory.GetItem(fileSource);
+            int result;
+
+            using (DBModel db = new DBModel(fileDB))
+            {
+                MyDBUpdater dbu = new MyDBUpdater();
+                result = dbu.FillContextFromItemView(dbu, item);
+            }
+            Assert.AreEqual(1, result);
+        }
+
     }
 }
