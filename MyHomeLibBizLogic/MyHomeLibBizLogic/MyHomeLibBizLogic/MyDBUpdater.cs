@@ -67,21 +67,47 @@ namespace MyHomeLibBizLogic
             return false;
         }
 
-        public int FillContextFromItemView(MyDBUpdater dbu, ITreeViewItem item)
+        public int FillContextFromItemView(DBModel db, ITreeViewItem item)
         {
             int result = 0;
+            string[] name;
+            string name3 = "";
 
             foreach (var i in item.GetChilds_Items())
             {
-                if (i.Type == ItemType.Attribute)
+                TreeViewItem_Attribute attr = i as TreeViewItem_Attribute;
+
+                if (attr != null && attr.Type == ItemType.Attribute)
                 {
-                    Debug.WriteLine(i.Name);
+                    if( attr.AttributeName.Equals("Author", StringComparison.OrdinalIgnoreCase))
+                    {
+                        Author author = new Author();
+                        name = attr.AttributeValue.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
+                        if (name.Length > 0)
+                            author.LastName = name[0];
+
+                        if (name.Length > 1)
+                            author.FirstName = name[1];
+
+                        if (name.Length > 2)
+                        {
+                            for(int j = 2; j < name.Length; j++)
+                            {
+                                name3 = string.Concat(name3, " ", name[j]);
+                            }                            
+                        }
+
+                        author.Patronymic = name3;
+                        db.Authors.Add(author);
+                    }
+                    Debug.WriteLine("Name {0}  Value {1} ", attr.AttributeName, attr.AttributeValue);                   
                 }
                 else
                 {
                     Debug.WriteLine(i.Type);
                 }
             }
+            db.SaveChanges();
 
             return result;
         }

@@ -17,6 +17,3 @@ D:\MyHomeLibrary\MyHomeLib_DB\MyDBModel\MyDBModel\bin\Debug\System.Data.SQLite.x
 D:\MyHomeLibrary\MyHomeLib_DB\MyDBModel\MyDBModel\bin\Debug\System.Data.SQLite.dll.config
 D:\MyHomeLibrary\MyHomeLib_DB\MyDBModel\MyDBModel\bin\Debug\System.Data.SQLite.EF6.Migrations.dll
 D:\MyHomeLibrary\MyHomeLib_DB\MyDBModel\MyDBModel\bin\Debug\SQLite.CodeFirst.dll
-D:\MyHomeLibrary\MyHomeLib_DB\MyDBModel\MyDBModel\obj\Debug\MyDBModel.Migrations.test.resources
-D:\MyHomeLibrary\MyHomeLib_DB\MyDBModel\MyDBModel\obj\Debug\MyDBModel.csproj.GenerateResource.cache
-D:\MyHomeLibrary\MyHomeLib_DB\MyDBModel\MyDBModel\obj\Debug\MyDBModel.Migrations.test1.resources

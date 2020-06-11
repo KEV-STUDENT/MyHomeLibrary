@@ -72,13 +72,15 @@ namespace MyHomeLibBizLogic.Test
             string fileSource = @"C:\librus_MyHomeLib\Davydov_Moskovit.454563.fb2";
             string fileDB = @"c:\1\TEST_3.sqlite";
 
+            string libPathTest = "Data Source=" + fileDB + "; version = 3 ";
+
             ITreeViewItem item = TreeItemsFactory.GetItem(fileSource);
             int result;
 
-            using (DBModel db = new DBModel(fileDB))
+            using (DBModel db = new DBModel(libPathTest))
             {
-                MyDBUpdater dbu = new MyDBUpdater();
-                result = dbu.FillContextFromItemView(dbu, item);
+               MyDBUpdater dbu = new MyDBUpdater();
+                result = dbu.FillContextFromItemView(db, item);
             }
             Assert.AreEqual(1, result);
         }

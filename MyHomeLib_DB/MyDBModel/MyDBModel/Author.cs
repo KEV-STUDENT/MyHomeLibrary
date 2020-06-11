@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Collections.Generic;
 
 namespace MyDBModel
 {
@@ -9,15 +10,24 @@ namespace MyDBModel
         [Key]
         public int Key { get; set; }
 
-        [Index("Name", IsUnique = true, Order = 1)]
+        [Index("FullName", IsUnique = true, Order = 1)]
         [Index("LastName")]
         [Required]
         public string LastName { get; set; }
-        [Index("Name", IsUnique = true, Order = 2)]
+
+        [Index("FullName", IsUnique = true, Order = 2)]
         [Index("FirstName")]
         [Required]
         public string FirstName { get; set; }
-        public string FirstName111 { get; set; }
-        //public string FirstName1_1 { get; set; }
+
+        [Index("FullName", IsUnique = true, Order = 3)]
+        public string Patronymic{ get; set; }
+
+        public ICollection<Book> Book { get; set; }
+
+        public Author()
+        {
+            Book = new List<Book>();
+        }
     }
 }

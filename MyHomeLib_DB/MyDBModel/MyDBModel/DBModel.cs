@@ -18,7 +18,7 @@ namespace MyDBModel
     public class DBModel : DbContext
     {
         //"name=MyDBContext"
-        public DBModel()//:base("name=MyDBContext")
+        public DBModel():base("name=MyDBContext")
         {
             Database.SetInitializer<DBModel>(null);
         }

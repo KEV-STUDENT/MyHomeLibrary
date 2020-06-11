@@ -73,7 +73,7 @@ namespace MyHomeLibFiles
             nodeList = xRoot.SelectNodes("//fb:description/fb:title-info/fb:genre", namespaceManager);
             if (nodeList.Count > 0)
             {
-                attribute = "Genre[fb2] :";
+                attribute = "Genre[fb2]:";
                 foreach (XmlNode genreType in nodeList)
                 {
                     attribute = string.Format("{0} {1},", attribute, GetInnerTextFromNode(genreType));

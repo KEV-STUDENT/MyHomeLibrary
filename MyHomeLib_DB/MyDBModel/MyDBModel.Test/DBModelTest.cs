@@ -74,7 +74,7 @@ namespace MyDBModel.Test
                 var authors = dB.Authors.ToList();
                 foreach(var a in authors)
                 {
-                    Debug.WriteLine("{0} : {1} {2} {3}", a.Key, a.FirstName, a.FirstName, a.FirstName111);
+                    Debug.WriteLine("{0} : {1} {2} {3}", a.Key, a.FirstName, a.FirstName, a.Patronymic);
                 }
             }
             Assert.IsTrue(File.Exists(file));
