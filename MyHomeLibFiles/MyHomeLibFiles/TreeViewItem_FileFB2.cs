@@ -47,20 +47,6 @@ namespace MyHomeLibFiles
             namespaceManager.AddNamespace("fb", "http://www.gribuser.ru/xml/fictionbook/2.0");
             string attribute;
 
-            var nodeList = xRoot.SelectNodes("//fb:description/fb:title-info/fb:author", namespaceManager);
-            if (nodeList.Count > 0)
-            {
-                attribute = "Author:";
-                foreach (XmlNode author in nodeList)
-                {
-                    attribute = string.Format("{0} {1} {2} {3},", attribute,
-                        GetInnerTextFromNode(author.SelectSingleNode("//fb:last-name", namespaceManager)),
-                        GetInnerTextFromNode(author.SelectSingleNode("//fb:first-name", namespaceManager)),
-                        GetInnerTextFromNode(author.SelectSingleNode("//fb:middle-name", namespaceManager)));
-                }
-                yield return attribute.TrimEnd(',');
-            }
-
             XmlNode book = xRoot.SelectSingleNode("//fb:description/fb:title-info/fb:book-title[1]", namespaceManager);
             yield return string.Format("Title: {0}", GetInnerTextFromNode(book));
 
@@ -70,17 +56,64 @@ namespace MyHomeLibFiles
             book = xRoot.SelectSingleNode("//fb:description/fb:title-info/fb:annotation[1]", namespaceManager);
             yield return string.Format("Annotation: {0}", GetInnerTextFromNode(book));
 
-            nodeList = xRoot.SelectNodes("//fb:description/fb:title-info/fb:genre", namespaceManager);
+            var nodeList = xRoot.SelectNodes("//fb:description/fb:title-info/fb:genre", namespaceManager);
             if (nodeList.Count > 0)
             {
                 attribute = "Genre[fb2]:";
                 foreach (XmlNode genreType in nodeList)
                 {
-                    attribute = string.Format("{0} {1},", attribute, GetInnerTextFromNode(genreType));
-                }
-                yield return attribute.TrimEnd(',');
+                    yield return string.Format("{0} {1}", attribute, GetInnerTextFromNode(genreType));
+                }                
             }
         }
+
+        public IEnumerable<TreeViewItem_Attribute> GetAuthors()
+        {
+            var xDoc = GetXmlDocument();
+            var xRoot = xDoc.DocumentElement;
+            var namespaceManager = new XmlNamespaceManager(new NameTable());
+            namespaceManager.AddNamespace("fb", "http://www.gribuser.ru/xml/fictionbook/2.0");
+            string lastName, firstName, middleName;
+
+            TreeViewItem_Attribute authorItem;
+
+            List<ITreeViewItem> list = new List<ITreeViewItem>();
+            var nodeList = xRoot.SelectNodes("//fb:description/fb:title-info/fb:author", namespaceManager);
+            if (nodeList.Count > 0)
+            {
+                foreach (XmlNode author in nodeList)
+                {
+                    lastName = GetInnerTextFromNode(author.SelectSingleNode("//fb:last-name", namespaceManager));
+                    firstName = GetInnerTextFromNode(author.SelectSingleNode("//fb:first-name", namespaceManager));
+                    middleName = GetInnerTextFromNode(author.SelectSingleNode("//fb:middle-name", namespaceManager));
+
+                    authorItem = new TreeViewItem_Attribute(string.Format("{0} {1} {2}",
+                        lastName, firstName, middleName), AttributeType.Author);
+
+                    authorItem.AddChild(new TreeViewItem_Attribute(lastName, AttributeType.LastName));
+                    authorItem.AddChild(new TreeViewItem_Attribute(firstName, AttributeType.FirstName));
+                    authorItem.AddChild(new TreeViewItem_Attribute(middleName, AttributeType.MiddleName));
+
+                    /*attribute = string.Format("{0} {1} {2} {3},", attribute,
+                        GetInnerTextFromNode(author.SelectSingleNode("//fb:last-name", namespaceManager)),
+                        GetInnerTextFromNode(author.SelectSingleNode("//fb:first-name", namespaceManager)),
+                        GetInnerTextFromNode(author.SelectSingleNode("//fb:middle-name", namespaceManager)));*/
+
+                    yield return authorItem;
+                }
+            }
+        }
+
+        public override List<ITreeViewItem> GetChilds_Items()
+        {
+            List<ITreeViewItem> list = new List<ITreeViewItem>();
+            foreach (string item in GetChilds())
+            {
+                list.Add(new TreeViewItem_Attribute(item));
+            }
+            return list;
+        }
+
 
         private string GetInnerTextFromNode(XmlNode node)
         {

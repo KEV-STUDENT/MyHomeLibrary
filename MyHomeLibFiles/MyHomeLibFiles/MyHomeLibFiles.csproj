@@ -43,6 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AttributeType.cs" />
     <Compile Include="ItemState.cs" />
     <Compile Include="ItemType.cs" />
     <Compile Include="ITreeViewItem.cs" />

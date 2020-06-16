@@ -69,9 +69,9 @@ namespace MyHomeLibBizLogic
 
         public int FillContextFromItemView(DBModel db, ITreeViewItem item)
         {
-            int result = 0;
-            string[] name;
-            string name3 = "";
+            int result = 0;            
+
+            Book book = new Book();
 
             foreach (var i in item.GetChilds_Items())
             {
@@ -79,27 +79,17 @@ namespace MyHomeLibBizLogic
 
                 if (attr != null && attr.Type == ItemType.Attribute)
                 {
-                    if( attr.AttributeName.Equals("Author", StringComparison.OrdinalIgnoreCase))
+                    switch (attr.AttributeName) 
                     {
-                        Author author = new Author();
-                        name = attr.AttributeValue.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
-                        if (name.Length > 0)
-                            author.LastName = name[0];
-
-                        if (name.Length > 1)
-                            author.FirstName = name[1];
-
-                        if (name.Length > 2)
-                        {
-                            for(int j = 2; j < name.Length; j++)
-                            {
-                                name3 = string.Concat(name3, " ", name[j]);
-                            }                            
-                        }
-
-                        author.Patronymic = name3;
-                        db.Authors.Add(author);
-                    }
+                        case "Author":
+                            AddAuthor2Book(attr.AttributeValue, book);
+                            break;
+                        case "Title":
+                            book.Caption = attr.AttributeValue;
+                            break;
+                        default:
+                            break;
+                    }                    
                     Debug.WriteLine("Name {0}  Value {1} ", attr.AttributeName, attr.AttributeValue);                   
                 }
                 else
@@ -107,9 +97,51 @@ namespace MyHomeLibBizLogic
                     Debug.WriteLine(i.Type);
                 }
             }
-            db.SaveChanges();
+            db.Books.Add(book);
+            result = db.SaveChanges();
 
             return result;
+        }
+
+        private void AddAuthor2Book(string authorName, Book book)
+        {
+            Author author = new Author();
+            string[] name;
+
+            name = authorName.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
+
+            if (name.Length > 0)
+                author.LastName = name[0];
+
+            if (name.Length > 1)
+                author.FirstName = name[1];
+
+            if (name.Length > 2)
+            {
+                for (int j = 2; j < name.Length; j++)
+                {
+                    author.MiddleName = string.Concat(author.MiddleName, " ", name[j]);
+                }
+            }
+
+            if (name.Length > 2)
+            {
+                for (int j = 2; j < name.Length; j++)
+                {
+                    author.MiddleName = string.Concat(author.MiddleName, " ", name[j]);
+                }
+            }
+
+            if (name.Length > 2)
+            {
+                for (int j = 2; j < name.Length; j++)
+                {
+                    author.MiddleName = string.Concat(author.MiddleName, " ", name[j]);
+                }
+            }
+
+
+            book.Author.Add(author);
         }
     }
 }

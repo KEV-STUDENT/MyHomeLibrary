@@ -4,3 +4,9 @@ D:\MyHomeLibrary\MyHomeLibFiles\MyHomeLibFiles\obj\Debug\MyHomeLibFiles.csproj.C
 D:\MyHomeLibrary\MyHomeLibFiles\MyHomeLibFiles\obj\Debug\MyHomeLibFiles.dll
 D:\MyHomeLibrary\MyHomeLibFiles\MyHomeLibFiles\obj\Debug\MyHomeLibFiles.pdb
 D:\MyHomeLibrary\MyHomeLibFiles\MyHomeLibFiles\obj\Debug\MyHomeLibFiles.csprojAssemblyReference.cache
+F:\MyRepository\MyHomeLibFiles\MyHomeLibFiles\bin\Debug\MyHomeLibFiles.dll
+F:\MyRepository\MyHomeLibFiles\MyHomeLibFiles\bin\Debug\MyHomeLibFiles.pdb
+F:\MyRepository\MyHomeLibFiles\MyHomeLibFiles\obj\Debug\MyHomeLibFiles.csprojAssemblyReference.cache
+F:\MyRepository\MyHomeLibFiles\MyHomeLibFiles\obj\Debug\MyHomeLibFiles.csproj.CoreCompileInputs.cache
+F:\MyRepository\MyHomeLibFiles\MyHomeLibFiles\obj\Debug\MyHomeLibFiles.dll
+F:\MyRepository\MyHomeLibFiles\MyHomeLibFiles\obj\Debug\MyHomeLibFiles.pdb

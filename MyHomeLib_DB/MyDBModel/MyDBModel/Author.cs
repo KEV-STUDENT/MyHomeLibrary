@@ -21,7 +21,11 @@ namespace MyDBModel
         public string FirstName { get; set; }
 
         [Index("FullName", IsUnique = true, Order = 3)]
-        public string Patronymic{ get; set; }
+        public string MiddleName{ get; set; }
+
+        public string NickName { get; set; }
+        public string EMail { get; set; }
+
 
         public ICollection<Book> Book { get; set; }
 

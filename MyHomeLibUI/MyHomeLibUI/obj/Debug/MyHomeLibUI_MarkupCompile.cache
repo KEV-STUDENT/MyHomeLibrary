@@ -4,7 +4,7 @@
 library
 C#
 .cs
-D:\MyHomeLibrary\MyHomeLibUI\MyHomeLibUI\obj\Debug\
+F:\MyRepository\MyHomeLibUI\MyHomeLibUI\obj\Debug\
 MyHomeLibUI
 none
 false
@@ -13,8 +13,8 @@ DEBUG;TRACE
 4-2103004763
 
 18-193798467
-161443390019
+16237189135
 FB2Page.xaml;OptionPage.xaml;SelectParamText.xaml;SelectPath.xaml;
 
-False
+True
 

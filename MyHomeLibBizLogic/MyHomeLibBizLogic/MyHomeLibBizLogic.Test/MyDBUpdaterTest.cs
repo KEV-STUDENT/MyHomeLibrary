@@ -29,8 +29,8 @@ namespace MyHomeLibBizLogic.Test
         [TestMethod]
         public void MyDBUpdater_ProcessUpdate()
         {
-            string file_SQLite = @"c:\1\TEST_3.sqlite";
-            string file_ZIP = @"C:\librus_MyHomeLib\lib.rus.ec\fb2-000024-030559.zip";
+            string file_SQLite = @"F:\1\TEST_3.sqlite";
+            string file_ZIP = @"E:\librus_MyHomeLib\lib.rus.ec\fb2-000024-030559.zip";
 
             MyDBUpdater dbu = new MyDBUpdater(file_SQLite, file_ZIP);
             Assert.IsTrue(dbu.ProcessUpdate());
@@ -69,8 +69,8 @@ namespace MyHomeLibBizLogic.Test
         [TestMethod]
         public void MyDBUpdater_FillContextFromItemView_FB2()
         {
-            string fileSource = @"C:\librus_MyHomeLib\Davydov_Moskovit.454563.fb2";
-            string fileDB = @"c:\1\TEST_3.sqlite";
+            string fileSource = @"E:\librus_MyHomeLib\Davydov_Moskovit.454563.fb2";
+            string fileDB = @"F:\1\TEST_3.sqlite";
 
             string libPathTest = "Data Source=" + fileDB + "; version = 3 ";
 

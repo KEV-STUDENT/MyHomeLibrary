@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-D:\MyHomeLibrary\MyHomeLibUI\MyHomeLibraryScaner\MyHomeLibraryScaner\obj\Debug\
+F:\MyRepository\MyHomeLibUI\MyHomeLibraryScaner\MyHomeLibraryScaner\obj\Debug\
 MyHomeLibraryScaner
 none
 false
 DEBUG;TRACE
-D:\MyHomeLibrary\MyHomeLibUI\MyHomeLibraryScaner\MyHomeLibraryScaner\App.xaml
+F:\MyRepository\MyHomeLibUI\MyHomeLibraryScaner\MyHomeLibraryScaner\App.xaml
 2-626341364
 
 7-93467951
-16-1998483959
+16-571466885
 MainWindow.xaml;ScannerMainForm.xaml;
 
-False
+True
 
