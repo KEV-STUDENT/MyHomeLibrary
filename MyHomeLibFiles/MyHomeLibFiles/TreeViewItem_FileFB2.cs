@@ -72,20 +72,20 @@ namespace MyHomeLibFiles
             var xDoc = GetXmlDocument();
             var xRoot = xDoc.DocumentElement;
             var namespaceManager = new XmlNamespaceManager(new NameTable());
+            
             namespaceManager.AddNamespace("fb", "http://www.gribuser.ru/xml/fictionbook/2.0");
-            string lastName, firstName, middleName;
 
+            string lastName, firstName, middleName;
             TreeViewItem_Attribute authorItem;
 
-            List<ITreeViewItem> list = new List<ITreeViewItem>();
             var nodeList = xRoot.SelectNodes("//fb:description/fb:title-info/fb:author", namespaceManager);
             if (nodeList.Count > 0)
             {
                 foreach (XmlNode author in nodeList)
                 {
-                    lastName = GetInnerTextFromNode(author.SelectSingleNode("//fb:last-name", namespaceManager));
-                    firstName = GetInnerTextFromNode(author.SelectSingleNode("//fb:first-name", namespaceManager));
-                    middleName = GetInnerTextFromNode(author.SelectSingleNode("//fb:middle-name", namespaceManager));
+                    lastName = GetInnerTextFromNode(author.SelectSingleNode("./fb:last-name", namespaceManager));
+                    firstName = GetInnerTextFromNode(author.SelectSingleNode("./fb:first-name", namespaceManager));
+                    middleName = GetInnerTextFromNode(author.SelectSingleNode("./fb:middle-name", namespaceManager));
 
                     authorItem = new TreeViewItem_Attribute(string.Format("{0} {1} {2}",
                         lastName, firstName, middleName), AttributeType.Author);
@@ -93,11 +93,6 @@ namespace MyHomeLibFiles
                     authorItem.AddChild(new TreeViewItem_Attribute(lastName, AttributeType.LastName));
                     authorItem.AddChild(new TreeViewItem_Attribute(firstName, AttributeType.FirstName));
                     authorItem.AddChild(new TreeViewItem_Attribute(middleName, AttributeType.MiddleName));
-
-                    /*attribute = string.Format("{0} {1} {2} {3},", attribute,
-                        GetInnerTextFromNode(author.SelectSingleNode("//fb:last-name", namespaceManager)),
-                        GetInnerTextFromNode(author.SelectSingleNode("//fb:first-name", namespaceManager)),
-                        GetInnerTextFromNode(author.SelectSingleNode("//fb:middle-name", namespaceManager)));*/
 
                     yield return authorItem;
                 }

@@ -73,26 +73,20 @@ namespace MyHomeLibFiles.Test
             string str = @"E:\librus_MyHomeLib\Davydov_Moskovit.454563.fb2";
             TreeViewItem_FileFB2 item = (TreeViewItem_FileFB2)TreeItemsFactory.GetItem(str);
 
+            Debug.WriteLine("============1============");
+
             var authors = item.GetAuthors();
             foreach (ITreeViewItem child in authors)
             {
                 Debug.WriteLine(child.Name);
-            }
-            /*foreach (ITreeViewItem child in childs)
-            {
-                if (child is TreeViewItem_Attribute)
+                Debug.WriteLine("========================");
+                foreach(var itm in child.GetChilds_Items())
                 {
-                    Debug.WriteLine(((TreeViewItem_Attribute)child).AttributeType);
+                    Debug.WriteLine(itm.Name);
                 }
                 Debug.WriteLine("========================");
-                IEnumerable<string> childs1 = child.GetChilds();
-                foreach (string child1 in childs1)
-                {
-                    Debug.WriteLine(child1);
-                }
-                Debug.WriteLine(child.Name);
-            }*/
-            Assert.AreEqual(authors.Count(), 3);
+            }
+            Assert.AreEqual(3, authors.Count());
         }
     }
 }
