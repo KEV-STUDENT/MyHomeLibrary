@@ -80,7 +80,7 @@ namespace MyHomeLibBizLogic.Test
             using (DBModel db = new DBModel(libPathTest))
             {
                MyDBUpdater dbu = new MyDBUpdater();
-                result = dbu.FillContextFromItemView(db, item);
+               result = dbu.FillContextFromItemView(db, item);
             }
             Assert.AreEqual(1, result);
         }

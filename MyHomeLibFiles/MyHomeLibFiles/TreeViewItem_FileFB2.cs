@@ -106,6 +106,10 @@ namespace MyHomeLibFiles
             {
                 list.Add(new TreeViewItem_Attribute(item));
             }
+            foreach(var author in GetAuthors())
+            {
+                list.Add(author);
+            }
             return list;
         }
 

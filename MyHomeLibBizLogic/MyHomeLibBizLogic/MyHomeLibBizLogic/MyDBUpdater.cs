@@ -79,12 +79,12 @@ namespace MyHomeLibBizLogic
 
                 if (attr != null && attr.Type == ItemType.Attribute)
                 {
-                    switch (attr.AttributeName) 
+                    switch (attr.AttributeType) 
                     {
-                        case "Author":
-                            AddAuthor2Book(attr.AttributeValue, book);
+                        case AttributeType.Author:
+                            AddAuthor2Book(attr, book, db);
                             break;
-                        case "Title":
+                        case AttributeType.Title:
                             book.Caption = attr.AttributeValue;
                             break;
                         default:
@@ -103,45 +103,52 @@ namespace MyHomeLibBizLogic
             return result;
         }
 
-        private void AddAuthor2Book(string authorName, Book book)
+        private void AddAuthor2Book(TreeViewItem_Attribute authorItem, Book book, DBModel db)
         {
+            bool isAuthor = false;
             Author author = new Author();
-            string[] name;
+            TreeViewItem_Attribute attr;
 
-            name = authorName.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
-
-            if (name.Length > 0)
-                author.LastName = name[0];
-
-            if (name.Length > 1)
-                author.FirstName = name[1];
-
-            if (name.Length > 2)
+            foreach (var info in authorItem.GetChilds_Items())
             {
-                for (int j = 2; j < name.Length; j++)
+                attr = info as TreeViewItem_Attribute;
+                if (attr != null)
                 {
-                    author.MiddleName = string.Concat(author.MiddleName, " ", name[j]);
+                    Debug.WriteLine("Name {0}  Value {1} ", attr.AttributeName, attr.AttributeValue);
+
+                    switch (attr.AttributeType)
+                    {
+                        case AttributeType.FirstName:
+                            author.FirstName = attr.AttributeValue;
+                            isAuthor = true;
+                            break;
+                        case AttributeType.LastName:
+                            author.LastName = attr.AttributeValue;
+                            isAuthor = true;
+                            break;
+                        case AttributeType.MiddleName:
+                            author.MiddleName = attr.AttributeValue;
+                            isAuthor = true;
+                            break;
+                        case AttributeType.NickName:
+                            author.NickName = attr.AttributeValue;
+                            isAuthor = true;
+                            break;
+                        case AttributeType.EMail:
+                            author.EMail = attr.AttributeValue;
+                            isAuthor = true;
+                            break;
+                        default:
+                            break;
+                    }
                 }
             }
 
-            if (name.Length > 2)
+            if (isAuthor)
             {
-                for (int j = 2; j < name.Length; j++)
-                {
-                    author.MiddleName = string.Concat(author.MiddleName, " ", name[j]);
-                }
+                db.Authors.Add(author);
+                book.Author.Add(author);
             }
-
-            if (name.Length > 2)
-            {
-                for (int j = 2; j < name.Length; j++)
-                {
-                    author.MiddleName = string.Concat(author.MiddleName, " ", name[j]);
-                }
-            }
-
-
-            book.Author.Add(author);
         }
     }
 }
