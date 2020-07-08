@@ -14,11 +14,13 @@ namespace MyDBModel
         [Required]
         public string Caption { get; set; }
 
-        public ICollection<Author> Author { get; set; }
+        public ICollection<Author> Authors{ get; set; }
+        public ICollection<KeyWord> KeyWords{ get; set; }
 
         public Book()
         {
-            Author = new List<Author>();
+            Authors = new List<Author>();
+            KeyWords = new List<KeyWord>();
         }
     }
 }

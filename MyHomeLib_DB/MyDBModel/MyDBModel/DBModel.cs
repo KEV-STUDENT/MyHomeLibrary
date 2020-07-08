@@ -43,5 +43,6 @@ namespace MyDBModel
 
         public DbSet<Author> Authors { get; set; }
         public DbSet<Book> Books { get; set; }
+        public DbSet<KeyWord> KeyWords { get; set; }
     }
 }
