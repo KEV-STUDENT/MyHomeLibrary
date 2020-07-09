@@ -11,11 +11,12 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>MyHomeLibBizLogic</RootNamespace>
     <AssemblyName>MyHomeLibBizLogic</AssemblyName>
-    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -56,6 +57,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\..\MyHomeLibCommon\MyHomeLibCommon\MyHomeLibCommon.csproj">
+      <Project>{3301fb8d-4c1d-4b4b-9dad-f39e92fa16d4}</Project>
+      <Name>MyHomeLibCommon</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\..\MyHomeLibFiles\MyHomeLibFiles\MyHomeLibFiles.csproj">
       <Project>{ac7e736a-1b57-49de-aacf-4bc2036278dd}</Project>
       <Name>MyHomeLibFiles</Name>

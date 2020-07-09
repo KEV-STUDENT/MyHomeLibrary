@@ -12,7 +12,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>MyHomeLibBizLogic.Test</RootNamespace>
     <AssemblyName>MyHomeLibBizLogic.Test</AssemblyName>
-    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">15.0</VisualStudioVersion>
@@ -22,6 +22,7 @@
     <TestProjectType>UnitTest</TestProjectType>
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -76,6 +77,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\..\MyHomeLibCommon\MyHomeLibCommon\MyHomeLibCommon.csproj">
+      <Project>{3301fb8d-4c1d-4b4b-9dad-f39e92fa16d4}</Project>
+      <Name>MyHomeLibCommon</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\..\MyHomeLibFiles\MyHomeLibFiles\MyHomeLibFiles.csproj">
       <Project>{ac7e736a-1b57-49de-aacf-4bc2036278dd}</Project>
       <Name>MyHomeLibFiles</Name>

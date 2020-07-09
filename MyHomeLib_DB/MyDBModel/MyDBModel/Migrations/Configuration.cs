@@ -5,23 +5,42 @@
     using System.Data.Entity.Migrations;
     using System.Data.SQLite.EF6.Migrations;
     using System.Linq;
+    using MyHomeLibCommon;
 
     internal sealed class Configuration : DbMigrationsConfiguration<MyDBModel.DBModel>
     {
+        private readonly bool _pendingMigrations;
         public Configuration()
         {
             AutomaticMigrationsEnabled = true;
             AutomaticMigrationDataLossAllowed = true;
 
-            SetSqlGenerator("System.Data.SQLite", new SQLiteMigrationSqlGenerator());
+            SetSqlGenerator("System.Data.SQLite", new SQLiteMigrationSqlGenerator());            
+        }
+
+        public Configuration(string connectionStr):this()
+        {
+            var migrator = new DbMigrator(this);
+            _pendingMigrations = migrator.GetPendingMigrations().Any();
+
+            if (_pendingMigrations)
+            {
+                migrator.Update();
+                Seed(new MyDBModel.DBModel(connectionStr));
+            }
         }
 
         protected override void Seed(MyDBModel.DBModel context)
         {
-            //  This method will be called after migrating to the latest version.
 
-            //  You can use the DbSet<T>.AddOrUpdate() helper extension method
-            //  to avoid creating duplicate seed data.
+            foreach(ItemGenre item in Enum.GetValues(typeof(ItemGenre)))
+            {
+                if (context.Genres.Find(item) == null)
+                {
+                    context.Genres.Add(new Genre { Key = item, Code = Enum.GetName(typeof(ItemGenre), item) });
+                }
+            }
+            context.SaveChanges();
         }
     }
 }

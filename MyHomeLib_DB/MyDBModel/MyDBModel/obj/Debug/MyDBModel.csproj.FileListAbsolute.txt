@@ -36,3 +36,5 @@ F:\MyRepository\MyHomeLib_DB\MyDBModel\MyDBModel\obj\Debug\MyDBModel.csproj.Core
 F:\MyRepository\MyHomeLib_DB\MyDBModel\MyDBModel\obj\Debug\MyDBModel.csproj.CopyComplete
 F:\MyRepository\MyHomeLib_DB\MyDBModel\MyDBModel\obj\Debug\MyDBModel.dll
 F:\MyRepository\MyHomeLib_DB\MyDBModel\MyDBModel\obj\Debug\MyDBModel.pdb
+F:\MyRepository\MyHomeLib_DB\MyDBModel\MyDBModel\bin\Debug\MyHomeLibCommon.dll
+F:\MyRepository\MyHomeLib_DB\MyDBModel\MyDBModel\bin\Debug\MyHomeLibCommon.pdb

@@ -46,3 +46,5 @@ F:\MyRepository\MyHomeLibBizLogic\MyHomeLibBizLogic\MyHomeLibBizLogic\obj\Debug\
 F:\MyRepository\MyHomeLibBizLogic\MyHomeLibBizLogic\MyHomeLibBizLogic\obj\Debug\MyHomeLibBizLogic.csproj.CopyComplete
 F:\MyRepository\MyHomeLibBizLogic\MyHomeLibBizLogic\MyHomeLibBizLogic\obj\Debug\MyHomeLibBizLogic.dll
 F:\MyRepository\MyHomeLibBizLogic\MyHomeLibBizLogic\MyHomeLibBizLogic\obj\Debug\MyHomeLibBizLogic.pdb
+F:\MyRepository\MyHomeLibBizLogic\MyHomeLibBizLogic\MyHomeLibBizLogic\bin\Debug\MyHomeLibCommon.dll
+F:\MyRepository\MyHomeLibBizLogic\MyHomeLibBizLogic\MyHomeLibBizLogic\bin\Debug\MyHomeLibCommon.pdb

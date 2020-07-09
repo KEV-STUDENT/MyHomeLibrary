@@ -27,11 +27,11 @@ namespace MyDBModel
         public string EMail { get; set; }
 
 
-        public ICollection<Book> Book { get; set; }
+        public ICollection<Book> Books { get; set; }
 
         public Author()
         {
-            Book = new List<Book>();
+            Books = new List<Book>();
         }
     }
 }

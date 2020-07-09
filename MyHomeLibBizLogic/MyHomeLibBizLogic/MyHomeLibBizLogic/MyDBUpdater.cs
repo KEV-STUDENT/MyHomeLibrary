@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 using MyHomeLibFiles;
 using MyDBModel;
+using MyHomeLibCommon;
 
 using System.Diagnostics;
 
@@ -70,7 +71,6 @@ namespace MyHomeLibBizLogic
         public int FillContextFromItemView(DBModel db, ITreeViewItem item)
         {
             int result = 0;            
-
             Book book = new Book();
 
             foreach (var i in item.GetChilds_Items())
@@ -86,6 +86,9 @@ namespace MyHomeLibBizLogic
                             break;
                         case AttributeType.Title:
                             book.Caption = attr.AttributeValue;
+                            break;
+                        case AttributeType.GenreFB2:
+                            AddGenreFB2Book(attr, book, db);                            
                             break;
                         default:
                             break;
@@ -106,7 +109,7 @@ namespace MyHomeLibBizLogic
         private void AddAuthor2Book(TreeViewItem_Attribute authorItem, Book book, DBModel db)
         {
             bool isAuthor = false;
-            Author author = new Author();
+            Author autorDB, author = new Author();
             TreeViewItem_Attribute attr;
 
             foreach (var info in authorItem.GetChilds_Items())
@@ -114,8 +117,6 @@ namespace MyHomeLibBizLogic
                 attr = info as TreeViewItem_Attribute;
                 if (attr != null)
                 {
-                    Debug.WriteLine("Name {0}  Value {1} ", attr.AttributeName, attr.AttributeValue);
-
                     switch (attr.AttributeType)
                     {
                         case AttributeType.FirstName:
@@ -146,9 +147,33 @@ namespace MyHomeLibBizLogic
 
             if (isAuthor)
             {
-                db.Authors.Add(author);
-                book.Author.Add(author);
+                autorDB = db.Authors.FirstOrDefault<Author>(
+                    p =>  p.LastName == author.LastName &&
+                    p.FirstName == author.FirstName &&
+                    p.MiddleName == author.MiddleName
+                    );
+
+                if (autorDB == null)
+                {
+                    db.Authors.Add(author);
+                }
+                else
+                {
+                    author = autorDB;
+                }
+                book.Authors.Add(author);
             }
+        }
+
+        private void AddGenreFB2Book(TreeViewItem_Attribute genreItem, Book book, DBModel db)
+        {
+            ItemGenre genre;
+
+            if(!Enum.TryParse<ItemGenre>(genreItem.AttributeValue, true, out genre))
+            {
+                genre = ItemGenre.none;
+            }
+            book.Genres.Add(db.Genres.Find(genre));
         }
     }
 }

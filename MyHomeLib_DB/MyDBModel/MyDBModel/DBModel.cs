@@ -18,7 +18,7 @@ namespace MyDBModel
     public class DBModel : DbContext
     {
         //"name=MyDBContext"
-        public DBModel():base("name=MyDBContext")
+        public DBModel():base()
         {
             Database.SetInitializer<DBModel>(null);
         }
@@ -44,5 +44,6 @@ namespace MyDBModel
         public DbSet<Author> Authors { get; set; }
         public DbSet<Book> Books { get; set; }
         public DbSet<KeyWord> KeyWords { get; set; }
+        public DbSet<Genre> Genres { get; set; }
     }
 }

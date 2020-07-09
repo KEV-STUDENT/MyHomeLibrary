@@ -7,7 +7,7 @@ namespace MyDBModel
     class DBModelMigrateInitializer : MigrateDatabaseToLatestVersion<DBModel, Migrations.Configuration>
     {
         public DBModelMigrateInitializer(string connectionString) 
-            : base(true, new Migrations.Configuration()
+            : base(true, new Migrations.Configuration(connectionString)
             { TargetDatabase = new DbConnectionInfo(connectionString, "System.Data.SQLite") })
         {
         }

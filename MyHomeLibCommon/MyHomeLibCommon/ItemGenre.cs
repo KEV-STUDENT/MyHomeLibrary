@@ -6,8 +6,11 @@ using System.Threading.Tasks;
 
 namespace MyHomeLibCommon
 {
+    [Flags]
     public enum ItemGenre
     {
+        none,
+
         #region Фантастика (Научная фантастика и Фэнтези)
         sf_history, // - Альтернативная история
         sf_action, // - Боевая фантастика
@@ -159,7 +162,11 @@ namespace MyHomeLibCommon
         home_diy, // - Сделай сам
         home_sport, // - Спорт
         home_sex, // - Эротика, Секс*/
-        home    // - Прочиее домоводство (то, что не вошло в другие категории)
+        home,    // - Прочиее домоводство (то, что не вошло в другие категории)
+        #endregion
+
+        #region Дополнительные
+        popadanec
         #endregion
     }
 }

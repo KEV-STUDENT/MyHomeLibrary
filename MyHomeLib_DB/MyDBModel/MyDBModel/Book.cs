@@ -10,17 +10,18 @@ namespace MyDBModel
         [Key]
         public int Key { get; set; }
 
-        [Index("Caption", IsUnique = true)]
+        [Index("Caption")]
         [Required]
         public string Caption { get; set; }
 
         public ICollection<Author> Authors{ get; set; }
         public ICollection<KeyWord> KeyWords{ get; set; }
-
+        public ICollection<Genre> Genres { get; set; }
         public Book()
         {
             Authors = new List<Author>();
             KeyWords = new List<KeyWord>();
+            Genres = new List<Genre>();
         }
     }
 }

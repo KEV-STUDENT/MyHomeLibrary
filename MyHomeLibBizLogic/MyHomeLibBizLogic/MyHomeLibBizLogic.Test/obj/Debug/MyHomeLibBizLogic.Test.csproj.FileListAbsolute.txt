@@ -74,3 +74,5 @@ F:\MyRepository\MyHomeLibBizLogic\MyHomeLibBizLogic\MyHomeLibBizLogic.Test\obj\D
 F:\MyRepository\MyHomeLibBizLogic\MyHomeLibBizLogic\MyHomeLibBizLogic.Test\obj\Debug\MyHomeLibBizLogic.Test.csproj.CopyComplete
 F:\MyRepository\MyHomeLibBizLogic\MyHomeLibBizLogic\MyHomeLibBizLogic.Test\obj\Debug\MyHomeLibBizLogic.Test.dll
 F:\MyRepository\MyHomeLibBizLogic\MyHomeLibBizLogic\MyHomeLibBizLogic.Test\obj\Debug\MyHomeLibBizLogic.Test.pdb
+F:\MyRepository\MyHomeLibBizLogic\MyHomeLibBizLogic\MyHomeLibBizLogic.Test\bin\Debug\MyHomeLibCommon.dll
+F:\MyRepository\MyHomeLibBizLogic\MyHomeLibBizLogic\MyHomeLibBizLogic.Test\bin\Debug\MyHomeLibCommon.pdb

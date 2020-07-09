@@ -2,7 +2,10 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using MyHomeLibFiles;
 using MyDBModel;
+using MyHomeLibCommon;
 using System.Data.Common;
+
+using System.Diagnostics;
 
 namespace MyHomeLibBizLogic.Test
 {
@@ -31,6 +34,9 @@ namespace MyHomeLibBizLogic.Test
         {
             string file_SQLite = @"F:\1\TEST_3.sqlite";
             string file_ZIP = @"E:\librus_MyHomeLib\lib.rus.ec\fb2-000024-030559.zip";
+
+            Debug.WriteLine("{0} - {1}", ItemGenre.none, (int)ItemGenre.none);
+            Debug.WriteLine("{0} - {1}", ItemGenre.home, (int)ItemGenre.home);
 
             MyDBUpdater dbu = new MyDBUpdater(file_SQLite, file_ZIP);
             Assert.IsTrue(dbu.ProcessUpdate());

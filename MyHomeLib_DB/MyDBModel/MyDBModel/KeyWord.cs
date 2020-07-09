@@ -13,5 +13,12 @@ namespace MyDBModel
         [Index("Word", IsUnique = true)]
         [Required]
         public string Word { get; set; }
+
+        public ICollection<Book> Books { get; set; }
+
+        public KeyWord()
+        {
+            Books = new List<Book>();
+        }
     }
 }
