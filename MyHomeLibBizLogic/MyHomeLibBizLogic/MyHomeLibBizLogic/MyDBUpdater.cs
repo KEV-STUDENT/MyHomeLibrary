@@ -90,6 +90,9 @@ namespace MyHomeLibBizLogic
                         case AttributeType.GenreFB2:
                             AddGenreFB2Book(attr, book, db);                            
                             break;
+                        case AttributeType.Genre:
+                            AddKeyWordsBook(attr, book, db);
+                            break;
                         default:
                             break;
                     }                    
@@ -174,6 +177,24 @@ namespace MyHomeLibBizLogic
                 genre = ItemGenre.none;
             }
             book.Genres.Add(db.Genres.Find(genre));
+        }
+
+
+        private void AddKeyWordsBook(TreeViewItem_Attribute attr, Book book, DBModel db)
+        {
+            string[] words = attr.AttributeValue.Split(new char[] { ',' });
+            KeyWord keyWord;
+            foreach (var word in words)
+            {
+                keyWord = db.KeyWords.FirstOrDefault<KeyWord>(
+                        p => p.Word == word);
+                if (keyWord == null)
+                {
+                    keyWord = new KeyWord() { Word = word};
+                    db.KeyWords.Add(keyWord);
+                }
+                book.KeyWords.Add(keyWord);
+            }
         }
     }
 }
