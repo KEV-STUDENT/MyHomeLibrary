@@ -9,7 +9,7 @@ namespace MyDBModel
     {
         public DbConnection CreateConnection(string nameOrConnectionString)
         {
-            Debug.WriteLine("DBSQLiteConnectioFactory :" + nameOrConnectionString);
+            //Debug.WriteLine("DBSQLiteConnectioFactory :" + nameOrConnectionString);
             return new SQLiteConnection(nameOrConnectionString);
         }
     }

@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using System.IO.Compression;
 using System.Diagnostics;
+using System.Security.Cryptography.X509Certificates;
 
 namespace MyHomeLibFiles
 {
@@ -30,6 +32,7 @@ namespace MyHomeLibFiles
 
         public virtual ItemType Type => type;
         public string Name => name;
+        public string Path => path;
         public ItemState State { get; set; }
 
         public virtual IEnumerable<string> GetChilds()
@@ -53,5 +56,49 @@ namespace MyHomeLibFiles
             }
             return list;
         }
+
+        public virtual byte[] GetFile4Book()
+        {
+            byte[] array;
+            if (type == ItemType.InZip)
+            {
+                using (ZipArchive archive = ZipFile.Open(path, ZipArchiveMode.Read))
+                {
+                    array = GetFile4Book(archive, name);
+                }
+            }
+            else
+            {
+                using (FileStream fstream = File.OpenRead(path))
+                {
+                    array = new byte[fstream.Length];
+                    // считываем данные
+                    fstream.Read(array, 0, array.Length);
+                }
+            }
+            return array;
+        }
+
+        public virtual byte[] GetFile4Book(ZipArchive archive, string fb2Name)
+        {
+            return GetFile4Book(archive.GetEntry(name));
+        }
+
+        public virtual byte[] GetFile4Book(ZipArchiveEntry entry)
+        {
+            byte[] array;
+            using (Stream st = entry.Open())
+            {
+
+                using (var ms = new MemoryStream())
+                {
+                    st.CopyTo(ms);
+                    //st.CopyToAsync(ms);
+                    array = ms.ToArray();
+                }
+            }
+            return array;
+        }
+
     }
 }

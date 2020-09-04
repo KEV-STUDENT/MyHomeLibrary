@@ -36,7 +36,7 @@ namespace MyDBModel
 
         /*protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            Debug.WriteLine("-=4=-");
+            //Debug.WriteLine("-=4=-");
             var sqliteConnectionInitializer = new SqliteCreateDatabaseIfNotExists<DBModel>(modelBuilder);
             Database.SetInitializer(sqliteConnectionInitializer);
         }*/

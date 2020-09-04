@@ -1,6 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Collections.Generic;
+using System.IO;
 
 namespace MyDBModel
 {
@@ -13,6 +14,8 @@ namespace MyDBModel
         [Index("Caption")]
         [Required]
         public string Caption { get; set; }
+        //public Stream BookFile { get; set; }
+        public byte[] BookFile { get; set; }
 
         public ICollection<Author> Authors{ get; set; }
         public ICollection<KeyWord> KeyWords{ get; set; }

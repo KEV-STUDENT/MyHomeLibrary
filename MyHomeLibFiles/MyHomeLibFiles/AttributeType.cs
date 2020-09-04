@@ -18,6 +18,7 @@ namespace MyHomeLibFiles
         Title,
         Genre,
         Annotation,
-        GenreFB2
+        GenreFB2,
+        Error
     }
 }
