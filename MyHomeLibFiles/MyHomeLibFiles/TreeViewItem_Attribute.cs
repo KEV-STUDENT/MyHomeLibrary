@@ -1,5 +1,7 @@
-﻿using System;
+﻿using MyDBModel;
+using System;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 
 namespace MyHomeLibFiles
 {
@@ -69,6 +71,16 @@ namespace MyHomeLibFiles
         public List<ITreeViewItem> GetChilds_Items()
         {
             return treeViews;
+        }
+
+        public List<Book> GetChilds_Books()
+        {
+            throw new NotImplementedException();
+        }
+
+        public List<DBFile> GetChilds_Files()
+        {
+            throw new NotImplementedException();
         }
     }
 }

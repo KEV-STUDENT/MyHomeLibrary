@@ -1,4 +1,6 @@
 ﻿using System.Collections.Generic;
+using MyDBModel;
+using System;
 
 namespace MyHomeLibFiles
 {
@@ -38,6 +40,32 @@ namespace MyHomeLibFiles
                 list.Add(TreeItemsFactory.GetItem(path, item));
             }
             return list;
+        }
+
+        public List<Book> GetChilds_Books()
+        {
+            List<Book> books = new List<Book>();
+            List<Book> childsBbooks;
+
+            foreach (var item in GetChilds_Items())
+            {
+                try
+                {
+                    childsBbooks = item.GetChilds_Books();
+                    books.AddRange(childsBbooks);
+                }
+                catch (NotImplementedException e)
+                {
+                    //
+                }
+            }
+
+            return books;
+        }
+
+        public List<DBFile> GetChilds_Files()
+        {
+            throw new NotImplementedException();
         }
     }
 }

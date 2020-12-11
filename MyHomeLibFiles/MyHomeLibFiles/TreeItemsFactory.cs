@@ -43,7 +43,6 @@ namespace MyHomeLibFiles
                     fileStream = new FileStream(str, FileMode.Open);
                     fileStream.Read(file, 0, 6);
                     fileStream.Close();
-
                     if (Enumerable.SequenceEqual(file, fb2Signature))
                     {
                         item = new TreeViewItem_FileFB2(str);
@@ -91,5 +90,14 @@ namespace MyHomeLibFiles
 
             return item;    
         }
+
+        public static ITreeViewItem GetItem(string zip, string file, Ionic.Zip.ZipFile zipArchive)
+        {
+            ITreeViewItem item;
+            item = new TreeViewItem_FileFB2(zip, file, zipArchive);
+
+            return item;
+        }
+
     }
 }

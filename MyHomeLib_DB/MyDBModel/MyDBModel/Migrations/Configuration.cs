@@ -7,7 +7,7 @@
     using System.Linq;
     using MyHomeLibCommon;
 
-    internal sealed class Configuration : DbMigrationsConfiguration<MyDBModel.DBModel>
+    internal sealed class Configuration : DbMigrationsConfiguration<MyDBModel.DBSQLiteModel>
     {
         private readonly bool _pendingMigrations;
         public Configuration()
@@ -26,11 +26,11 @@
             if (_pendingMigrations)
             {
                 migrator.Update();
-                Seed(new MyDBModel.DBModel(connectionStr));
+                Seed(new MyDBModel.DBSQLiteModel(connectionStr));
             }
         }
 
-        protected override void Seed(MyDBModel.DBModel context)
+        protected override void Seed(MyDBModel.DBSQLiteModel context)
         {
 
             foreach(ItemGenre item in Enum.GetValues(typeof(ItemGenre)))

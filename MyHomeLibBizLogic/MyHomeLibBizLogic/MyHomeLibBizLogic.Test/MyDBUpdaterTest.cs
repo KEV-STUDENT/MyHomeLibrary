@@ -33,8 +33,9 @@ namespace MyHomeLibBizLogic.Test
             string file_SQLite = @"F:\1\TEST_3.sqlite";
             string file_ZIP = @"E:\librus_MyHomeLib\lib.rus.ec\fb2-203897-204340.zip";
 
-            
-            MyDBUpdater dbu = new MyDBUpdater(file_SQLite, file_ZIP);
+
+            //MyDBUpdater dbu = new MyDBUpdater(file_SQLite, file_ZIP, true);
+            MyDBUpdater dbu = new MyDBUpdater(file_SQLite, file_ZIP, false, true);
             Assert.IsTrue(dbu.ProcessUpdate());
         }
 
@@ -49,6 +50,18 @@ namespace MyHomeLibBizLogic.Test
             Assert.IsTrue(dbu.ProcessUpdate());
         }
 
+        [TestMethod]
+        public void MyDBUpdater_ProcessUpdate_Directory()
+        {
+            string file_SQLite = @"F:\1\TEST_DIR.sqlite";
+            //string file_Dir = @"E:\librus_MyHomeLib";
+            //string file_Dir = @"E:\librus_MyHomeLib\flibusta";
+            //string file_Dir = @"E:\librus_MyHomeLib\lib.rus.ec";
+            string file_Dir = @"F:\1\test";
+
+            MyDBUpdater dbu = new MyDBUpdater(file_SQLite, file_Dir, false, true);
+            Assert.IsTrue(dbu.ProcessUpdate());
+        }
 
         [ExpectedException(typeof(System.ArgumentOutOfRangeException))]
         [TestMethod]
@@ -79,55 +92,5 @@ namespace MyHomeLibBizLogic.Test
             dbu.FileSource = file_ZIP;
             Assert.IsTrue(dbu.ProcessUpdate());
         }
-
-        [TestMethod]
-        public void MyDBUpdater_FillContextFromItemView_FB2()
-        {
-            string fileSource = @"E:\librus_MyHomeLib\Davydov_Moskovit.454563.fb2";
-            string fileDB = @"F:\1\TEST_3.sqlite";
-
-            string libPathTest = "Data Source=" + fileDB + "; version = 3 ";
-
-            ITreeViewItem item = TreeItemsFactory.GetItem(fileSource);
-            int result = 0;
-
-            using (DBModel db = new DBModel(libPathTest))
-            {
-               MyDBUpdater dbu = new MyDBUpdater(true);
-               dbu.FillContextFromItemView(db, item);
-                try
-                {
-                    result = db.SaveChanges();
-                }
-                catch(SystemException e)
-                {
-                    Debug.WriteLine(e.Message);
-                }
-            }
-            Assert.AreNotEqual<int>(0, result);
-        }
-
-        [TestMethod]
-        public void MyDBUpdater_FillContextFromItemView_FB2_DuplicatedBook()
-        {
-            string fileSource = @"E:\librus_MyHomeLib\Davydov_Moskovit.454563.fb2";
-            string fileDB = @"F:\1\TEST_3.sqlite";
-
-            string libPathTest = "Data Source=" + fileDB + "; version = 3 ";
-
-            ITreeViewItem item = TreeItemsFactory.GetItem(fileSource);
-            int result;
-
-            using (DBModel db = new DBModel(libPathTest))
-            {
-                MyDBUpdater dbu = new MyDBUpdater(true);
-                result = dbu.FillContextFromItemView(db, item);
-
-                dbu = new MyDBUpdater();
-                result = dbu.FillContextFromItemView(db, item);
-            }
-            Assert.AreEqual<int>(0, result);
-        }
-
     }
 }

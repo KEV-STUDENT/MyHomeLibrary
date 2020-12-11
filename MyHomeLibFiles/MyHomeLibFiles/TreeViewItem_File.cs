@@ -4,6 +4,7 @@ using System.IO;
 using System.IO.Compression;
 using System.Diagnostics;
 using System.Security.Cryptography.X509Certificates;
+using MyDBModel;
 
 namespace MyHomeLibFiles
 {
@@ -47,6 +48,33 @@ namespace MyHomeLibFiles
             }
         }
 
+        public virtual List<Book> GetChilds_Books()
+        {
+            throw new NotImplementedException();
+        }
+
+        public List<MyDBModel.DBFile> GetChilds_Files()
+        {
+            List<MyDBModel.DBFile> list = new List<MyDBModel.DBFile>();
+            MyDBModel.DBFile file;
+            List<Book> books;
+            if (type != ItemType.InZip)
+            {
+                try
+                {
+                    books = GetChilds_Books();
+                    file = new MyDBModel.DBFile() { Path = path, Books = books};
+
+                    //file = new MyDBModel.DBFile() { Path = path};
+                    Debug.WriteLine(file.Path);
+                    list.Add(file);
+                }
+                catch ( NotImplementedException e)
+                { }
+            }
+            return list;
+        }
+
         public virtual List<ITreeViewItem> GetChilds_Items()
         {
             List<ITreeViewItem> list = new List<ITreeViewItem>();
@@ -56,49 +84,64 @@ namespace MyHomeLibFiles
             }
             return list;
         }
+        //public virtual byte[] GetFile4Book()
+        //{
+        //    byte[] array;
+        //    if (type == ItemType.InZip)
+        //    {
+        //        using (ZipArchive archive = ZipFile.Open(path, ZipArchiveMode.Read))
+        //        {
+        //            array = GetFile4Book(archive, name);
+        //        }
+        //    }
+        //    else
+        //    {
+        //        using (FileStream fstream = File.OpenRead(path))
+        //        {
+        //            array = new byte[fstream.Length];
+        //            // считываем данные
+        //            fstream.Read(array, 0, array.Length);
+        //        }
+        //    }
+        //    return array;
+        //}
 
-        public virtual byte[] GetFile4Book()
-        {
-            byte[] array;
-            if (type == ItemType.InZip)
-            {
-                using (ZipArchive archive = ZipFile.Open(path, ZipArchiveMode.Read))
-                {
-                    array = GetFile4Book(archive, name);
-                }
-            }
-            else
-            {
-                using (FileStream fstream = File.OpenRead(path))
-                {
-                    array = new byte[fstream.Length];
-                    // считываем данные
-                    fstream.Read(array, 0, array.Length);
-                }
-            }
-            return array;
-        }
+        //public virtual byte[] GetFile4Book(ZipArchive archive, string fb2Name)
+        //{
+        //    return GetFile4Book(archive.GetEntry(name));
+        //}
 
-        public virtual byte[] GetFile4Book(ZipArchive archive, string fb2Name)
-        {
-            return GetFile4Book(archive.GetEntry(name));
-        }
+        //public virtual byte[] GetFile4Book(Ionic.Zip.ZipEntry entry)
+        //{
+        //    byte[] array;
+        //    using (Stream st = entry.OpenReader())
+        //    {
 
-        public virtual byte[] GetFile4Book(ZipArchiveEntry entry)
-        {
-            byte[] array;
-            using (Stream st = entry.Open())
-            {
+        //        using (var ms = new MemoryStream())
+        //        {
+        //            st.CopyTo(ms);
+        //            //st.CopyToAsync(ms);
+        //            array = ms.ToArray();
+        //        }
+        //    }
+        //    return array;
+        //}
 
-                using (var ms = new MemoryStream())
-                {
-                    st.CopyTo(ms);
-                    //st.CopyToAsync(ms);
-                    array = ms.ToArray();
-                }
-            }
-            return array;
-        }
+        //public virtual byte[] GetFile4Book(ZipArchiveEntry entry)
+        //{
+        //    byte[] array;
+        //    using (Stream st = entry.Open())
+        //    {
+
+        //        using (var ms = new MemoryStream())
+        //        {
+        //            st.CopyTo(ms);
+        //            //st.CopyToAsync(ms);
+        //            array = ms.ToArray();
+        //        }
+        //    }
+        //    return array;
+        //}
 
     }
 }

@@ -31,6 +31,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="DotNetZip, Version=1.13.8.0, Culture=neutral, PublicKeyToken=6583c7c814667745, processorArchitecture=MSIL">
+      <HintPath>..\..\MyHomeLibBizLogic\MyHomeLibBizLogic\packages\DotNetZip.1.13.8\lib\net40\DotNetZip.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.IO.Compression" />
@@ -56,6 +59,19 @@
     <Compile Include="TreeViewItem_FileFB2.cs" />
     <Compile Include="TreeViewItem_FilesUnion.cs" />
     <Compile Include="TreeViewItem_FileZIP.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\MyHomeLibCommon\MyHomeLibCommon\MyHomeLibCommon.csproj">
+      <Project>{3301fb8d-4c1d-4b4b-9dad-f39e92fa16d4}</Project>
+      <Name>MyHomeLibCommon</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\MyHomeLib_DB\MyDBModel\MyDBModel\MyDBModel.csproj">
+      <Project>{97fa248f-3914-4189-ae20-fd9afee46e3a}</Project>
+      <Name>MyDBModel</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

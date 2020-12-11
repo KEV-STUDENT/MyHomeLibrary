@@ -1,0 +1,10 @@
+F:\MyRepository\MyHLibFiles\MyHLibFiles\bin\Debug\MyHLibFiles.dll
+F:\MyRepository\MyHLibFiles\MyHLibFiles\bin\Debug\MyHLibFiles.pdb
+F:\MyRepository\MyHLibFiles\MyHLibFiles\obj\Debug\MyHLibFiles.csprojAssemblyReference.cache
+F:\MyRepository\MyHLibFiles\MyHLibFiles\obj\Debug\MyHLibFiles.csproj.CoreCompileInputs.cache
+F:\MyRepository\MyHLibFiles\MyHLibFiles\obj\Debug\MyHLibFiles.dll
+F:\MyRepository\MyHLibFiles\MyHLibFiles\obj\Debug\MyHLibFiles.pdb
+F:\MyRepository\MyHLibFiles\MyHLibFiles\bin\Debug\DotNetZip.dll
+F:\MyRepository\MyHLibFiles\MyHLibFiles\bin\Debug\DotNetZip.pdb
+F:\MyRepository\MyHLibFiles\MyHLibFiles\bin\Debug\DotNetZip.xml
+F:\MyRepository\MyHLibFiles\MyHLibFiles\obj\Debug\MyHLibFiles.csproj.CopyComplete

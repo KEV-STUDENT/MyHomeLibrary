@@ -1,5 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using MyDBModel;
 
 namespace MyHomeLibFiles
 {
@@ -11,5 +11,8 @@ namespace MyHomeLibFiles
 
         IEnumerable<string> GetChilds();
         List<ITreeViewItem> GetChilds_Items();
+
+        List<Book> GetChilds_Books();
+        List<DBFile> GetChilds_Files();
     }
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MyDBModel;
+using System;
 using System.Collections.Generic;
 namespace MyHomeLibFiles
 {
@@ -13,6 +14,16 @@ namespace MyHomeLibFiles
         public IEnumerable<string> GetChilds()
         {
             yield break;
+        }
+
+        public List<Book> GetChilds_Books()
+        {
+            throw new NotImplementedException();
+        }
+
+        public List<DBFile> GetChilds_Files()
+        {
+            throw new NotImplementedException();
         }
 
         public List<ITreeViewItem> GetChilds_Items()

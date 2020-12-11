@@ -4,6 +4,8 @@ using System.IO;
 using System.IO.Compression;
 using System.Threading.Tasks;
 using System.Diagnostics;
+using System.Linq;
+using MyDBModel;
 
 namespace MyHomeLibFiles
 {
@@ -31,7 +33,7 @@ namespace MyHomeLibFiles
             }
             else
             {
-                using (ZipArchive zipArchive = ZipFile.OpenRead(path))
+                using (Ionic.Zip.ZipFile zipArchive = Ionic.Zip.ZipFile.Read(path))
                 {
                     string name;
                     List<string> list;
@@ -42,6 +44,7 @@ namespace MyHomeLibFiles
                         int nUnionsAdd = zipArchive.Entries.Count % _AvgFilesInUnions;
 
                         useUnionsCollection = true;
+                        var listZip = zipArchive.Entries.ToList<Ionic.Zip.ZipEntry>();
 
                         for (int i = 0; i < nUnions; i++)
                         {
@@ -56,10 +59,10 @@ namespace MyHomeLibFiles
 
                             for (int j = cnt; j <= fin; j++)
                             {
-                                list.Add(zipArchive.Entries[j].Name);
+                                list.Add(listZip[j].FileName);
                             }
                             cnt = fin + 1;
-                            name = string.Format("{0} - {1}", zipArchive.Entries[start].Name, zipArchive.Entries[fin].Name);
+                            name = string.Format("{0} - {1}", listZip[start].FileName, listZip[fin].FileName);
                             dict.Add(name, list);
                             yield return name;
                         }
@@ -68,7 +71,7 @@ namespace MyHomeLibFiles
                     {
                         foreach (var item in zipArchive.Entries)
                         {
-                            yield return item.FullName;
+                            yield return item.FileName;
                         }
                     }
                 }
@@ -92,6 +95,24 @@ namespace MyHomeLibFiles
             return list;
         }
 
+        public override List<Book> GetChilds_Books()
+        {
+            ITreeViewItem treeViewItem;
+            List<Book> books = new List<Book>();
+            using (Ionic.Zip.ZipFile zipArchive = Ionic.Zip.ZipFile.Read(path))
+            {
+                foreach(var entry in zipArchive.Entries)
+                {
+                    treeViewItem = TreeItemsFactory.GetItem(path, entry.FileName, zipArchive);
+                    if (treeViewItem is TreeViewItem_FileFB2 fb2)
+                    {
+                        books.Add(fb2.GetBook());
+                    }
+                }
+            }
+
+            return books;
+        }
         /*class UnionFiles
         {
             private string name;

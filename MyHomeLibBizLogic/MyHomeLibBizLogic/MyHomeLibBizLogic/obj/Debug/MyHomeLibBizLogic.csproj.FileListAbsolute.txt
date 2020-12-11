@@ -48,3 +48,6 @@ F:\MyRepository\MyHomeLibBizLogic\MyHomeLibBizLogic\MyHomeLibBizLogic\obj\Debug\
 F:\MyRepository\MyHomeLibBizLogic\MyHomeLibBizLogic\MyHomeLibBizLogic\obj\Debug\MyHomeLibBizLogic.pdb
 F:\MyRepository\MyHomeLibBizLogic\MyHomeLibBizLogic\MyHomeLibBizLogic\bin\Debug\MyHomeLibCommon.dll
 F:\MyRepository\MyHomeLibBizLogic\MyHomeLibBizLogic\MyHomeLibBizLogic\bin\Debug\MyHomeLibCommon.pdb
+F:\MyRepository\MyHomeLibBizLogic\MyHomeLibBizLogic\MyHomeLibBizLogic\bin\Debug\DotNetZip.dll
+F:\MyRepository\MyHomeLibBizLogic\MyHomeLibBizLogic\MyHomeLibBizLogic\bin\Debug\DotNetZip.pdb
+F:\MyRepository\MyHomeLibBizLogic\MyHomeLibBizLogic\MyHomeLibBizLogic\bin\Debug\DotNetZip.xml
