@@ -40,6 +40,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="DotNetZip, Version=1.15.0.0, Culture=neutral, PublicKeyToken=6583c7c814667745, processorArchitecture=MSIL">
+      <HintPath>..\packages\DotNetZip.1.15.0\lib\net40\DotNetZip.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.VisualStudio.TestPlatform.TestFramework, Version=14.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\MSTest.TestFramework.2.1.1\lib\net45\Microsoft.VisualStudio.TestPlatform.TestFramework.dll</HintPath>
     </Reference>
@@ -55,6 +58,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="HLibFileZIPTest.cs" />
     <Compile Include="HLibFactoryTest.cs" />
+    <Compile Include="HLibBookTest.cs" />
+    <Compile Include="HLibFactoryTest_Exceptions.cs" />
+    <Compile Include="HLibFactoryTest_ZIP.cs" />
+    <Compile Include="HLibFileZIPTest_Exceptions.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

@@ -2,6 +2,7 @@
 using System.IO;
 using System.Collections.Generic;
 using System.Diagnostics;
+using Ionic.Zip;
 
 namespace MyHLibFiles
 {
@@ -11,7 +12,7 @@ namespace MyHLibFiles
         {
         }
 
-        public HLibDirectory(string path, string name, bool inArchive) : base(path, name, inArchive)
+        public HLibDirectory(HLibFileZIP zip, ZipEntry entry) : base(zip, entry)
         {
         }
 

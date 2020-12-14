@@ -1,4 +1,5 @@
-﻿using System.IO;
+﻿using System;
+using System.IO;
 using System.Collections.Generic;
 using Ionic.Zip;
 
@@ -25,11 +26,25 @@ namespace MyHLibFiles
 
         public override IEnumerable<HLibDiscItem> GetDiscItemsEnum()
         {
+            HLibDiscItem discItem;
             foreach (var item in zipArchive.Entries)
             {
-                yield return new HLibFile(zipArchive.Name, item.FileName, true);
+                try
+                {
+                    discItem = HLibFactory.GetDiskItem(this, item);
+                }
+                catch (ExceptionAccess e) { continue; }
+                catch (NotImplementedException e) { continue; }
+                catch (NotSupportedException e) { continue; }
+
+                yield return discItem;                
             }
             yield break;
+        }
+
+        public override IData GetDataFromFile()
+        {
+            throw new NotSupportedException();
         }
     }
 }

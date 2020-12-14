@@ -1,15 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
+using Ionic.Zip;
 
 namespace MyHLibFiles
 {
-    public class HLibFile : HLibDiscItem, IDisposable
+    public abstract class HLibFile : HLibDiscItem, IDisposable
     {
         public HLibFile(string path, string name) : base(path, name)
         {
         }
 
-        public HLibFile(string path, string name, bool inArchive) : base(path, name, inArchive)
+        public HLibFile(HLibFileZIP zip, ZipEntry entry) : base(zip, entry)
         {
         }
 
@@ -20,6 +21,8 @@ namespace MyHLibFiles
 
         public virtual void CloseFile()
         { }
+
+        public abstract IData GetDataFromFile();
 
         public virtual void OpenFile()
         { }

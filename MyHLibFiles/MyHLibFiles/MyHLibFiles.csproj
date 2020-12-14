@@ -47,11 +47,15 @@
   <ItemGroup>
     <Compile Include="ExceptionAccess.cs" />
     <Compile Include="ExceptionPath.cs" />
+    <Compile Include="HLibBookFB2.cs" />
     <Compile Include="HLibDiscItem.cs" />
     <Compile Include="HLibDirectory.cs" />
     <Compile Include="HLibFactory.cs" />
     <Compile Include="HLibFile.cs" />
+    <Compile Include="HLibFileFB2.cs" />
     <Compile Include="HLibFileZIP.cs" />
+    <Compile Include="HLibBook.cs" />
+    <Compile Include="IData.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

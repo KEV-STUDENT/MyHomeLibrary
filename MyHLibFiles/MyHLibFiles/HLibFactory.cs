@@ -1,6 +1,7 @@
 ﻿using System;
 using System.IO;
 using System.Linq;
+using Ionic.Zip;
 
 namespace MyHLibFiles
 {
@@ -36,21 +37,17 @@ namespace MyHLibFiles
                 {
                     return new HLibFileZIP(path, name);
                 }
-                else
+
+                file = new byte[6];
+                fileStream = new FileStream(fullName, FileMode.Open);
+                fileStream.Read(file, 0, 6);
+                fileStream.Close();
+                if (Enumerable.SequenceEqual(file, fb2Signature))
                 {
-                    file = new byte[6];
-                    fileStream = new FileStream(fullName, FileMode.Open);
-                    fileStream.Read(file, 0, 6);
-                    fileStream.Close();
-                    if (Enumerable.SequenceEqual(file, fb2Signature))
-                    {
-                        throw new NotImplementedException();
-                    }
-                    else
-                    {
-                        throw new NotSupportedException();
-                    }
+                    return new HLibFileFB2(path, name);
                 }
+
+                throw new NotSupportedException();
             }
             catch (NotImplementedException e)
             {
@@ -64,6 +61,37 @@ namespace MyHLibFiles
             {
                 throw new ExceptionAccess(path, name);
             }
+        }
+
+        public static HLibDiscItem GetDiskItem(HLibFileZIP zip, ZipEntry entry)
+        {
+            if (zip == null || entry == null)
+            {
+                throw new ArgumentNullException();
+            }
+
+            if (!File.Exists(zip.FullName))
+            {
+                throw new ExceptionPath(zip.Path, zip.Name);
+            }
+
+            if (entry.IsDirectory)
+            {
+                return new HLibDirectory(zip, entry);
+            }
+            else
+            {
+                using (var st = entry.OpenReader())
+                {
+                    byte[] bt = new byte[6];
+                    st.Read(bt, 0, 6);
+                    if (Enumerable.SequenceEqual(bt, fb2Signature))
+                    {
+                        return new HLibFileFB2(zip, entry);
+                    }
+                }                
+            }
+            throw new NotSupportedException();
         }
     }
 }

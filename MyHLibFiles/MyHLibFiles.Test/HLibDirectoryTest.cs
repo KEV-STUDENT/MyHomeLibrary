@@ -12,77 +12,54 @@ namespace MyHLibFiles.Test
     {
         private string path = @"F:\1\";
         private string name = "test";
-        private int cnt = 4;
+        private int cnt = 5;
+        HLibDirectory dir;
+
+        [TestInitialize]
+        public void Setup()
+        {
+            dir = new HLibDirectory(path, name);
+        }
 
         [TestMethod]
         public void HLibDirectory_Constructor()
         {
-            HLibDirectory dir = new HLibDirectory(path, name);
             Assert.IsInstanceOfType(dir, typeof(HLibDirectory));
         }
 
         [TestMethod]
         public void HLibDirectory_is_HLDiscItem()
         {
-            HLibDirectory di = new HLibDirectory(path, name);
-            Assert.IsInstanceOfType(di, typeof(HLibDiscItem));
+            Assert.IsInstanceOfType(dir, typeof(HLibDiscItem));
         }
 
         [TestMethod]
         public void HLibDirectory_get_Path()
         {
-            HLibDirectory dir = new HLibDirectory(path, name);
             Assert.AreEqual(path, dir.Path);
         }
 
         [TestMethod]
         public void HLibDirectory_get_Name()
         {
-            HLibDirectory dir = new HLibDirectory(path, name);
             Assert.AreEqual(name, dir.Name);
         }
 
         [TestMethod]
         public void HLibDirectory_get_FullName()
         {
-            HLibDirectory dir = new HLibDirectory(path, name);
             Assert.AreEqual(Path.Combine(path, name), dir.FullName);
         }
 
         [TestMethod]
-        public void HLibDirectory_get_InArchive_False()
+        public void HLibDirectory_get_InArchive()
         {
-            HLibDirectory dir = new HLibDirectory(path, name);
             Assert.IsFalse(dir.InArchive);
-        }
-
-        [TestMethod]
-        public void HLibDirectory_get_InArchive_True()
-        {
-            HLibDirectory dir = new HLibDirectory(path, name, true);
-            Assert.IsTrue(dir.InArchive);
-        }
-
-        [TestMethod]
-        public void HLibDirectory_GetDiscItemsEnum()
-        {
-            HLibDirectory dir = new HLibDirectory(path, name);
-            IEnumerable<HLibDiscItem> list = dir.GetDiscItemsEnum();
-            Assert.IsInstanceOfType(list, typeof(IEnumerable<HLibDiscItem>));
-        }
-
-        [TestMethod]
-        public void HLDiscItem_GetDiscItemsEnum()
-        {
-            HLibDiscItem dir = new HLibDirectory(path, name);
-            IEnumerable<HLibDiscItem> list = dir.GetDiscItemsEnum();
-            Assert.IsInstanceOfType(list, typeof(IEnumerable<HLibDiscItem>));
         }
 
         [TestMethod]
         public void HLibDirectory_GetDiscItemsEnum_Count()
         {
-            HLibDirectory dir = new HLibDirectory(path, name);
             IEnumerable<HLibDiscItem> list = dir.GetDiscItemsEnum();
             foreach(var item in list)
             {
@@ -94,7 +71,6 @@ namespace MyHLibFiles.Test
         [TestMethod]
         public void HLibDirectory_GetDiscItemsList_Count()
         {
-            HLibDirectory dir = new HLibDirectory(path, name);
             List<HLibDiscItem> list = dir.GetDiscItemsList();
             foreach (var item in list)
             {

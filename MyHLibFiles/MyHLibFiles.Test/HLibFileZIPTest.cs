@@ -12,25 +12,29 @@ namespace MyHLibFiles.Test
 
         private string path = @"F:\1\test\test1";
         private string name = "fb2-203897-204340.zip";
+        HLibFileZIP zip;
+
+        [TestInitialize]
+        public void Setup()
+        {
+            zip = new HLibFileZIP(path, name);
+        }
 
         [TestMethod]
         public void HLibFileZIP_Constructor()
         {
-            HLibFileZIP zip = new HLibFileZIP(path, name);
             Assert.IsInstanceOfType(zip, typeof(HLibFileZIP));
         }
 
         [TestMethod]
         public void HLibFileZIP_is_HLDiscItem()
         {
-            HLibFileZIP zip = new HLibFileZIP(path, name);
             Assert.IsInstanceOfType(zip, typeof(HLibFile));
         }
 
         [TestMethod]
         public void HLibFileZIP_GetDiscItemsEnum_Count()
         {
-            HLibFileZIP zip = new HLibFileZIP(path, name);
             IEnumerable<HLibDiscItem> list = zip.GetDiscItemsEnum();
             foreach (var item in list)
             {
@@ -42,7 +46,6 @@ namespace MyHLibFiles.Test
         [TestMethod]
         public void HLibFileZIP_GetDiscItemsList_InArchive()
         {
-            HLibFileZIP zip = new HLibFileZIP(path, name);
             List<HLibDiscItem> list = zip.GetDiscItemsList();
             Assert.IsTrue(list[0].InArchive);
         }

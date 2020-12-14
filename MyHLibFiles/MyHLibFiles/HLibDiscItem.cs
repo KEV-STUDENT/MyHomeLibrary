@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Ionic.Zip;
 
 namespace MyHLibFiles
 {
@@ -12,6 +13,8 @@ namespace MyHLibFiles
         protected string _path;
         protected string _fullName;
         protected bool _inArchive;
+        protected HLibFileZIP _zip;
+        protected ZipEntry _zipEntry;
 
         public virtual string Name
         {
@@ -41,9 +44,11 @@ namespace MyHLibFiles
             _fullName = System.IO.Path.Combine(Path, Name);
         }
 
-        public HLibDiscItem(string path, string name, bool inArchive):this(path, name)
+        public HLibDiscItem(HLibFileZIP zip, ZipEntry entry) : this(zip.FullName, entry.FileName)
         {
-            InArchive = inArchive;
+            InArchive = true;
+            _zip = zip;
+            _zipEntry = entry;
         }
 
         public abstract IEnumerable<HLibDiscItem> GetDiscItemsEnum();
