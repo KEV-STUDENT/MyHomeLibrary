@@ -20,3 +20,7 @@ F:\MyRepository\MyHLibFiles\MyHLibFiles.Test\obj\Debug\MyHLibFiles.Test.pdb
 F:\MyRepository\MyHLibFiles\MyHLibFiles.Test\bin\Debug\DotNetZip.dll
 F:\MyRepository\MyHLibFiles\MyHLibFiles.Test\bin\Debug\DotNetZip.pdb
 F:\MyRepository\MyHLibFiles\MyHLibFiles.Test\bin\Debug\DotNetZip.xml
+F:\MyRepository\MyHLibFiles\MyHLibFiles.Test\bin\Debug\MyHomeLibCommon.dll
+F:\MyRepository\MyHLibFiles\MyHLibFiles.Test\bin\Debug\MyHomeLibCommon.pdb
+F:\MyRepository\MyHLibFiles\MyHLibFiles.Test\bin\Debug\HLibBooks.dll
+F:\MyRepository\MyHLibFiles\MyHLibFiles.Test\bin\Debug\HLibBooks.pdb

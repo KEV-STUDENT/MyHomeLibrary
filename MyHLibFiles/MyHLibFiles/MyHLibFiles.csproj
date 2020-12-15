@@ -46,20 +46,28 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ExceptionAccess.cs" />
+    <Compile Include="ExceptionDataNotLoaded.cs" />
     <Compile Include="ExceptionPath.cs" />
-    <Compile Include="HLibBookFB2.cs" />
     <Compile Include="HLibDiscItem.cs" />
     <Compile Include="HLibDirectory.cs" />
     <Compile Include="HLibFactory.cs" />
     <Compile Include="HLibFile.cs" />
     <Compile Include="HLibFileFB2.cs" />
     <Compile Include="HLibFileZIP.cs" />
-    <Compile Include="HLibBook.cs" />
-    <Compile Include="IData.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\MyHomeLibCommon\MyHomeLibCommon\MyHomeLibCommon.csproj">
+      <Project>{3301fb8d-4c1d-4b4b-9dad-f39e92fa16d4}</Project>
+      <Name>MyHomeLibCommon</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\HLibBooks\MyHLibBooks.csproj">
+      <Project>{2fe1164e-b543-49d3-8015-5f7b24214956}</Project>
+      <Name>MyHLibBooks</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

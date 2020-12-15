@@ -57,7 +57,7 @@ namespace MyHLibFiles
             {
                 throw e;
             }
-            catch (Exception e)
+            catch
             {
                 throw new ExceptionAccess(path, name);
             }

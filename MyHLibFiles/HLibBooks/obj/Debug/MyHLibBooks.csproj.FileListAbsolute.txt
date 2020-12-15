@@ -1,0 +1,9 @@
+F:\MyRepository\MyHLibFiles\HLibBooks\bin\Debug\HLibBooks.dll
+F:\MyRepository\MyHLibFiles\HLibBooks\bin\Debug\HLibBooks.pdb
+F:\MyRepository\MyHLibFiles\HLibBooks\obj\Debug\MyHLibBooks.csproj.CoreCompileInputs.cache
+F:\MyRepository\MyHLibFiles\HLibBooks\obj\Debug\HLibBooks.dll
+F:\MyRepository\MyHLibFiles\HLibBooks\obj\Debug\HLibBooks.pdb
+F:\MyRepository\MyHLibFiles\HLibBooks\obj\Debug\MyHLibBooks.csprojAssemblyReference.cache
+F:\MyRepository\MyHLibFiles\HLibBooks\bin\Debug\MyHomeLibCommon.dll
+F:\MyRepository\MyHLibFiles\HLibBooks\bin\Debug\MyHomeLibCommon.pdb
+F:\MyRepository\MyHLibFiles\HLibBooks\obj\Debug\MyHLibBooks.csproj.CopyComplete

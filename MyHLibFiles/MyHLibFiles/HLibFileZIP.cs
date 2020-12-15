@@ -2,6 +2,7 @@
 using System.IO;
 using System.Collections.Generic;
 using Ionic.Zip;
+using MyHLibBooks;
 
 namespace MyHLibFiles
 {
@@ -33,9 +34,9 @@ namespace MyHLibFiles
                 {
                     discItem = HLibFactory.GetDiskItem(this, item);
                 }
-                catch (ExceptionAccess e) { continue; }
-                catch (NotImplementedException e) { continue; }
-                catch (NotSupportedException e) { continue; }
+                catch (ExceptionAccess) { continue; }
+                catch (NotImplementedException) { continue; }
+                catch (NotSupportedException) { continue; }
 
                 yield return discItem;                
             }

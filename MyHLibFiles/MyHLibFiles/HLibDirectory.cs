@@ -50,9 +50,9 @@ namespace MyHLibFiles
                 {
                     discItem = HLibFactory.GetDiskItem(FullName, name);
                 }
-                catch (ExceptionAccess e) { continue; }
-                catch (NotImplementedException e) { continue; }
-                catch (NotSupportedException e) { continue; }
+                catch (ExceptionAccess) { continue; }
+                catch (NotImplementedException) { continue; }
+                catch (NotSupportedException) { continue; }
 
                 yield return discItem;
             }

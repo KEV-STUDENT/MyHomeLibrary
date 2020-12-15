@@ -14,7 +14,7 @@ namespace MyHLibFiles
         protected string _fullName;
         protected bool _inArchive;
         protected HLibFileZIP _zip;
-        protected ZipEntry _zipEntry;
+        protected ZipEntry _zip_Entry;
 
         public virtual string Name
         {
@@ -34,7 +34,11 @@ namespace MyHLibFiles
         public virtual bool InArchive
         {
             get => _inArchive;
-            set { _inArchive = value; }
+        }
+
+        public virtual ZipEntry Zip_Entry
+        {
+            get => _zip_Entry;
         }
 
         public HLibDiscItem(string path, string name)
@@ -46,9 +50,9 @@ namespace MyHLibFiles
 
         public HLibDiscItem(HLibFileZIP zip, ZipEntry entry) : this(zip.FullName, entry.FileName)
         {
-            InArchive = true;
+            _inArchive = true;
             _zip = zip;
-            _zipEntry = entry;
+            _zip_Entry = entry;
         }
 
         public abstract IEnumerable<HLibDiscItem> GetDiscItemsEnum();

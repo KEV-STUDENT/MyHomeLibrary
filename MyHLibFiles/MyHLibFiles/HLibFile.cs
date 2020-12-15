@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using Ionic.Zip;
+using MyHLibBooks;
 
 namespace MyHLibFiles
 {
@@ -19,13 +20,11 @@ namespace MyHLibFiles
             CloseFile();
         }
 
-        public virtual void CloseFile()
-        { }
+        public abstract void CloseFile();
 
         public abstract IData GetDataFromFile();
 
-        public virtual void OpenFile()
-        { }
+        public abstract void OpenFile();
 
         public override IEnumerable<HLibDiscItem> GetDiscItemsEnum()
         {

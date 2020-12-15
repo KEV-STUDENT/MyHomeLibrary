@@ -8,3 +8,7 @@ F:\MyRepository\MyHLibFiles\MyHLibFiles\bin\Debug\DotNetZip.dll
 F:\MyRepository\MyHLibFiles\MyHLibFiles\bin\Debug\DotNetZip.pdb
 F:\MyRepository\MyHLibFiles\MyHLibFiles\bin\Debug\DotNetZip.xml
 F:\MyRepository\MyHLibFiles\MyHLibFiles\obj\Debug\MyHLibFiles.csproj.CopyComplete
+F:\MyRepository\MyHLibFiles\MyHLibFiles\bin\Debug\MyHomeLibCommon.dll
+F:\MyRepository\MyHLibFiles\MyHLibFiles\bin\Debug\MyHomeLibCommon.pdb
+F:\MyRepository\MyHLibFiles\MyHLibFiles\bin\Debug\HLibBooks.dll
+F:\MyRepository\MyHLibFiles\MyHLibFiles\bin\Debug\HLibBooks.pdb

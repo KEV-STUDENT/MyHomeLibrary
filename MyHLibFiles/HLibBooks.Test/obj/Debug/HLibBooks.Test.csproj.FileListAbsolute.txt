@@ -1,0 +1,2 @@
+F:\MyRepository\MyHLibFiles\HLibBooks.Test\obj\Debug\HLibBooks.Test.csprojAssemblyReference.cache
+F:\MyRepository\MyHLibFiles\HLibBooks.Test\obj\Debug\HLibBooks.Test.csproj.CoreCompileInputs.cache

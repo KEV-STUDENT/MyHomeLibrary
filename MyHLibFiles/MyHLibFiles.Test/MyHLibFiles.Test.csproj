@@ -58,7 +58,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="HLibFileZIPTest.cs" />
     <Compile Include="HLibFactoryTest.cs" />
-    <Compile Include="HLibBookTest.cs" />
     <Compile Include="HLibFactoryTest_Exceptions.cs" />
     <Compile Include="HLibFactoryTest_ZIP.cs" />
     <Compile Include="HLibFileZIPTest_Exceptions.cs" />

@@ -1,4 +1,4 @@
-﻿namespace MyHLibFiles
+﻿namespace MyHLibBooks
 {
     public interface IData
     {
