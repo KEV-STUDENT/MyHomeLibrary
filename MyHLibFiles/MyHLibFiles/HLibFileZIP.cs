@@ -6,7 +6,7 @@ using MyHLibBooks;
 
 namespace MyHLibFiles
 {
-    public class HLibFileZIP : HLibFile
+    public class HLibFileZIP : HLibFile, IHLibDirectoryArchive
     {
         private ZipFile zipArchive;
 
@@ -25,7 +25,7 @@ namespace MyHLibFiles
             zipArchive.Dispose();
         }
 
-        public override IEnumerable<HLibDiscItem> GetDiscItemsEnum()
+        public IEnumerable<HLibDiscItem> GetDiscItemsEnum()
         {
             HLibDiscItem discItem;
             foreach (var item in zipArchive.Entries)
@@ -43,9 +43,26 @@ namespace MyHLibFiles
             yield break;
         }
 
-        public override IData GetDataFromFile()
+        public List<HLibDiscItem> GetDiscItemsList()
         {
-            throw new NotSupportedException();
+            List<HLibDiscItem> list = new List<HLibDiscItem>();
+            foreach (var item in GetDiscItemsEnum())
+            {
+                list.Add(item);
+            }
+            return list;
+        }
+
+        public ZipEntry GetEntryByName(string entryName)
+        {
+            foreach (var item in zipArchive.Entries)
+            {
+                if(entryName.CompareTo(item.FileName) == 0)
+                {
+                    return item;
+                }
+            }
+            throw new ExceptionPath(FullName, entryName);
         }
     }
 }

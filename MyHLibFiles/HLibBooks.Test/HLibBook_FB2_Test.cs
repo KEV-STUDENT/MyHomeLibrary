@@ -4,6 +4,7 @@ using System.Diagnostics;
 using System.Linq;
 using MyHLibBooks;
 using MyHLibFiles;
+using System.Threading.Tasks;
 
 namespace MyHLibBooks.Test
 {
@@ -14,10 +15,10 @@ namespace MyHLibBooks.Test
         private string name = "Davydov_Moskovit.454563.fb2";
         private HLibBookFB2 book;
         [TestInitialize]
-        public void Setup()
+        public async Task Setup()
         {
-            HLibFile fb2 = (HLibFile)HLibFactory.GetDiskItem(path, name);
-            book  = (HLibBookFB2) fb2.GetDataFromFile();
+            HLibFileFB2 fb2 = (HLibFileFB2)HLibFactory.GetDiskItem(path, name);
+            book  = (HLibBookFB2) await fb2.GetDataFromFileAsync();
         }
 
         [TestMethod]

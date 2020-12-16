@@ -15,6 +15,7 @@ namespace MyHLibFiles
         protected bool _inArchive;
         protected HLibFileZIP _zip;
         protected ZipEntry _zip_Entry;
+        protected bool _exclusive;
 
         public virtual string Name
         {
@@ -48,23 +49,14 @@ namespace MyHLibFiles
             _fullName = System.IO.Path.Combine(Path, Name);
         }
 
-        public HLibDiscItem(HLibFileZIP zip, ZipEntry entry) : this(zip.FullName, entry.FileName)
+        public HLibDiscItem(HLibFileZIP zip, ZipEntry entry) : this(zip, entry, false) { }
+
+        public HLibDiscItem(HLibFileZIP zip, ZipEntry entry, bool exclusive) : this(zip.FullName, entry.FileName)
         {
             _inArchive = true;
             _zip = zip;
             _zip_Entry = entry;
-        }
-
-        public abstract IEnumerable<HLibDiscItem> GetDiscItemsEnum();
-        
-        public virtual List<HLibDiscItem> GetDiscItemsList()
-        {
-            List<HLibDiscItem> list = new List<HLibDiscItem>();
-            foreach(var item in GetDiscItemsEnum())
-            {
-                list.Add(item);
-            }
-            return list;
+            _exclusive = exclusive;
         }
     }
 }

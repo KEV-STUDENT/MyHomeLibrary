@@ -63,7 +63,27 @@ namespace MyHLibFiles
             }
         }
 
+        public static HLibDiscItem GetDiskItem(string path, string name, bool inArchive)
+        {
+            if (inArchive)
+            {
+                FileInfo fileInfo = new FileInfo(path);
+                HLibFileZIP zip = (HLibFileZIP)GetDiskItem(fileInfo.DirectoryName, fileInfo.Name);
+                ZipEntry entry = zip.GetEntryByName(name);
+                return GetDiskItem(zip, entry, true);
+            }    
+            else
+            {
+                return GetDiskItem(path, name);
+            }
+        }
+
         public static HLibDiscItem GetDiskItem(HLibFileZIP zip, ZipEntry entry)
+        {
+            return GetDiskItem(zip, entry, false);
+        }
+
+        public static HLibDiscItem GetDiskItem(HLibFileZIP zip, ZipEntry entry, bool excl)
         {
             if (zip == null || entry == null)
             {
@@ -87,7 +107,7 @@ namespace MyHLibFiles
                     st.Read(bt, 0, 6);
                     if (Enumerable.SequenceEqual(bt, fb2Signature))
                     {
-                        return new HLibFileFB2(zip, entry);
+                        return new HLibFileFB2(zip, entry, excl);
                     }
                 }                
             }

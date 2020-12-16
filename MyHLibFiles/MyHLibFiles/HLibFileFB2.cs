@@ -7,10 +7,11 @@ using System.Diagnostics;
 using System.Collections.Generic;
 using MyHomeLibCommon;
 using MyHLibBooks;
+using System.Threading.Tasks;
 
 namespace MyHLibFiles
 {
-    public class HLibFileFB2 : HLibFile
+    public class HLibFileFB2 : HLibFile, IHLibFileWithData
     {
         private Stream stream = null;
         private XmlDocument xmlDoc = null;
@@ -24,7 +25,15 @@ namespace MyHLibFiles
         {
         }
 
-        public override IData GetDataFromFile()
+        public HLibFileFB2(HLibFileZIP zip, ZipEntry entry, bool exclusive) : base(zip, entry, exclusive)
+        {
+        }
+
+        public async Task<IData> GetDataFromFileAsync()
+        {
+            return await Task<IData>.Factory.StartNew(GetDataFromFile);
+        }
+        public IData GetDataFromFile()
         {
             XmlElement xRoot;
             XmlNamespaceManager namespaceManager;
@@ -224,6 +233,10 @@ namespace MyHLibFiles
                 stream.Dispose();
                 stream = null;
             }
+            if(InArchive && _exclusive && _zip!=null)
+            {
+                _zip.Dispose();
+            }
         }
 
         public override void OpenFile()
@@ -247,6 +260,6 @@ namespace MyHLibFiles
                     throw new ExceptionAccess(Path, Name);
                 }
             }
-        }
+        }        
     }
 }

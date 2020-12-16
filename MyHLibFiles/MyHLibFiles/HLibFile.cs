@@ -15,6 +15,8 @@ namespace MyHLibFiles
         {
         }
 
+        public HLibFile(HLibFileZIP zip, ZipEntry entry, bool exclusive) : base(zip, entry, exclusive){}
+
         public void Dispose()
         {
             CloseFile();
@@ -22,13 +24,6 @@ namespace MyHLibFiles
 
         public abstract void CloseFile();
 
-        public abstract IData GetDataFromFile();
-
         public abstract void OpenFile();
-
-        public override IEnumerable<HLibDiscItem> GetDiscItemsEnum()
-        {
-            yield break;
-        }
     }
 }

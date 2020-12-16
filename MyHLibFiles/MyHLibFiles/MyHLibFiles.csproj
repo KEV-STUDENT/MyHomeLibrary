@@ -54,6 +54,8 @@
     <Compile Include="HLibFile.cs" />
     <Compile Include="HLibFileFB2.cs" />
     <Compile Include="HLibFileZIP.cs" />
+    <Compile Include="IHLibDirectoryArchive.cs" />
+    <Compile Include="IHLibFileWithData.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

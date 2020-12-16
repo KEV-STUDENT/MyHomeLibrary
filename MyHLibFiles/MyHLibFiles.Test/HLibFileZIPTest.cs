@@ -3,6 +3,7 @@ using System;
 using System.Diagnostics;
 using System.Collections.Generic;
 using System.Linq;
+using Ionic.Zip;
 
 namespace MyHLibFiles.Test
 {
@@ -12,6 +13,7 @@ namespace MyHLibFiles.Test
 
         private string path = @"F:\1\test\test1";
         private string name = "fb2-203897-204340.zip";
+        private string entryName = "203897.fb2";
         HLibFileZIP zip;
 
         [TestInitialize]
@@ -48,6 +50,13 @@ namespace MyHLibFiles.Test
         {
             List<HLibDiscItem> list = zip.GetDiscItemsList();
             Assert.IsTrue(list[0].InArchive);
+        }
+
+        [TestMethod]
+        public void HLibFileZIP_GetDiscItemsList_GetEntryByName()
+        {
+            ZipEntry entry = zip.GetEntryByName(entryName);
+            Assert.IsInstanceOfType(entry, typeof(ZipEntry));
         }
     }
 }

@@ -59,12 +59,5 @@ namespace MyHLibFiles.Test
         {
             Assert.IsFalse(libFile.InArchive);
         }
-
-        [TestMethod]
-        public void HLibFile_GetDiscItemsEnum()
-        {
-            IEnumerable<HLibDiscItem> list = libFile.GetDiscItemsEnum();
-            Assert.IsInstanceOfType(list, typeof(IEnumerable<HLibDiscItem>));
-        }
     }
 }

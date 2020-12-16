@@ -6,7 +6,7 @@ using Ionic.Zip;
 
 namespace MyHLibFiles
 {
-    public class HLibDirectory : HLibDiscItem
+    public class HLibDirectory : HLibDiscItem, IHLibDirectoryArchive
     {
         public HLibDirectory(string path, string name) : base(path, name)
         {
@@ -16,7 +16,7 @@ namespace MyHLibFiles
         {
         }
 
-        public override IEnumerable<HLibDiscItem> GetDiscItemsEnum()
+        public IEnumerable<HLibDiscItem> GetDiscItemsEnum()
         {
             IEnumerable<string> collectionDirFile;
             string name;
@@ -57,6 +57,16 @@ namespace MyHLibFiles
                 yield return discItem;
             }
             yield break;
+        }
+
+        public List<HLibDiscItem> GetDiscItemsList()
+        {
+            List<HLibDiscItem> list = new List<HLibDiscItem>();
+            foreach (var item in GetDiscItemsEnum())
+            {
+                list.Add(item);
+            }
+            return list;
         }
     }
 }

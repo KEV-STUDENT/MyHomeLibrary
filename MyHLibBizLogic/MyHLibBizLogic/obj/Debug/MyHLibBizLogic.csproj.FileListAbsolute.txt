@@ -1,0 +1,16 @@
+F:\MyRepository\MyHLibBizLogic\MyHLibBizLogic\bin\Debug\MyHLibBizLogic.dll
+F:\MyRepository\MyHLibBizLogic\MyHLibBizLogic\bin\Debug\MyHLibBizLogic.pdb
+F:\MyRepository\MyHLibBizLogic\MyHLibBizLogic\bin\Debug\DotNetZip.dll
+F:\MyRepository\MyHLibBizLogic\MyHLibBizLogic\bin\Debug\MyHLibFiles.dll
+F:\MyRepository\MyHLibBizLogic\MyHLibBizLogic\bin\Debug\HLibBooks.dll
+F:\MyRepository\MyHLibBizLogic\MyHLibBizLogic\bin\Debug\MyHomeLibCommon.dll
+F:\MyRepository\MyHLibBizLogic\MyHLibBizLogic\bin\Debug\MyHLibFiles.pdb
+F:\MyRepository\MyHLibBizLogic\MyHLibBizLogic\bin\Debug\DotNetZip.pdb
+F:\MyRepository\MyHLibBizLogic\MyHLibBizLogic\bin\Debug\DotNetZip.xml
+F:\MyRepository\MyHLibBizLogic\MyHLibBizLogic\bin\Debug\HLibBooks.pdb
+F:\MyRepository\MyHLibBizLogic\MyHLibBizLogic\bin\Debug\MyHomeLibCommon.pdb
+F:\MyRepository\MyHLibBizLogic\MyHLibBizLogic\obj\Debug\MyHLibBizLogic.csprojAssemblyReference.cache
+F:\MyRepository\MyHLibBizLogic\MyHLibBizLogic\obj\Debug\MyHLibBizLogic.csproj.CoreCompileInputs.cache
+F:\MyRepository\MyHLibBizLogic\MyHLibBizLogic\obj\Debug\MyHLibBizLogic.csproj.CopyComplete
+F:\MyRepository\MyHLibBizLogic\MyHLibBizLogic\obj\Debug\MyHLibBizLogic.dll
+F:\MyRepository\MyHLibBizLogic\MyHLibBizLogic\obj\Debug\MyHLibBizLogic.pdb

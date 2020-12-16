@@ -9,6 +9,7 @@ namespace MyHLibFiles.Test
         private string path = @"F:\1\test\test1";
         private string name = "fb2-203897-204340.zip";
         private string fullPath = @"F:\1\test\test1\fb2-203897-204340.zip";
+        private string fb2NameInZip = "203897.fb2";
 
         private HLibDiscItem item;
 
@@ -34,6 +35,14 @@ namespace MyHLibFiles.Test
                 zip.Entries.CopyTo(zipEntries, 0);
                 fb2 = HLibFactory.GetDiskItem((HLibFileZIP)item, zipEntries[0]);
             }
+            Assert.IsInstanceOfType(fb2, typeof(HLibFileFB2));
+        }
+
+        [TestMethod]
+        public void HLibFactory_GetDiscItem_HLibFileFB2_in_ZIP_2()
+        {
+            HLibDiscItem fb2;
+            fb2 = HLibFactory.GetDiskItem(fullPath, fb2NameInZip, true);
             Assert.IsInstanceOfType(fb2, typeof(HLibFileFB2));
         }
     }
