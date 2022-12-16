@@ -49,9 +49,11 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="HLibBizLogicLoadBooksInZipTest.cs" />
+    <Compile Include="HLibBizLogicLoadBooksInFileTest.cs" />
     <Compile Include="HLibBizLogicTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="HLibBizLogicLoadBooksTest.cs" />
+    <Compile Include="HLibBizLogicLoadBooksInDirectoryTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

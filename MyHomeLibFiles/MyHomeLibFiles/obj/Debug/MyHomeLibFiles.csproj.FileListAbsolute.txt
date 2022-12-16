@@ -6,7 +6,6 @@ D:\MyHomeLibrary\MyHomeLibFiles\MyHomeLibFiles\obj\Debug\MyHomeLibFiles.pdb
 D:\MyHomeLibrary\MyHomeLibFiles\MyHomeLibFiles\obj\Debug\MyHomeLibFiles.csprojAssemblyReference.cache
 F:\MyRepository\MyHomeLibFiles\MyHomeLibFiles\bin\Debug\MyHomeLibFiles.dll
 F:\MyRepository\MyHomeLibFiles\MyHomeLibFiles\bin\Debug\MyHomeLibFiles.pdb
-F:\MyRepository\MyHomeLibFiles\MyHomeLibFiles\obj\Debug\MyHomeLibFiles.csprojAssemblyReference.cache
 F:\MyRepository\MyHomeLibFiles\MyHomeLibFiles\obj\Debug\MyHomeLibFiles.csproj.CoreCompileInputs.cache
 F:\MyRepository\MyHomeLibFiles\MyHomeLibFiles\obj\Debug\MyHomeLibFiles.dll
 F:\MyRepository\MyHomeLibFiles\MyHomeLibFiles\obj\Debug\MyHomeLibFiles.pdb
@@ -26,3 +25,4 @@ F:\MyRepository\MyHomeLibFiles\MyHomeLibFiles\bin\Debug\MyDBModel.dll.config
 F:\MyRepository\MyHomeLibFiles\MyHomeLibFiles\bin\Debug\EntityFramework.xml
 F:\MyRepository\MyHomeLibFiles\MyHomeLibFiles\bin\Debug\System.Data.SQLite.xml
 F:\MyRepository\MyHomeLibFiles\MyHomeLibFiles\bin\Debug\System.Data.SQLite.dll.config
+F:\MyRepository\MyHomeLibFiles\MyHomeLibFiles\obj\Debug\MyHomeLibFiles.csproj.AssemblyReference.cache

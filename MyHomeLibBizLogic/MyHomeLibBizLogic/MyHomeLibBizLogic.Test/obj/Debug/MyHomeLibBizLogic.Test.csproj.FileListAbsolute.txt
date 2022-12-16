@@ -69,7 +69,6 @@ F:\MyRepository\MyHomeLibBizLogic\MyHomeLibBizLogic\MyHomeLibBizLogic.Test\bin\D
 F:\MyRepository\MyHomeLibBizLogic\MyHomeLibBizLogic\MyHomeLibBizLogic.Test\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.xml
 F:\MyRepository\MyHomeLibBizLogic\MyHomeLibBizLogic\MyHomeLibBizLogic.Test\bin\Debug\System.Data.SQLite.xml
 F:\MyRepository\MyHomeLibBizLogic\MyHomeLibBizLogic\MyHomeLibBizLogic.Test\bin\Debug\System.Data.SQLite.dll.config
-F:\MyRepository\MyHomeLibBizLogic\MyHomeLibBizLogic\MyHomeLibBizLogic.Test\obj\Debug\MyHomeLibBizLogic.Test.csprojAssemblyReference.cache
 F:\MyRepository\MyHomeLibBizLogic\MyHomeLibBizLogic\MyHomeLibBizLogic.Test\obj\Debug\MyHomeLibBizLogic.Test.csproj.CoreCompileInputs.cache
 F:\MyRepository\MyHomeLibBizLogic\MyHomeLibBizLogic\MyHomeLibBizLogic.Test\obj\Debug\MyHomeLibBizLogic.Test.csproj.CopyComplete
 F:\MyRepository\MyHomeLibBizLogic\MyHomeLibBizLogic\MyHomeLibBizLogic.Test\obj\Debug\MyHomeLibBizLogic.Test.dll
@@ -79,3 +78,4 @@ F:\MyRepository\MyHomeLibBizLogic\MyHomeLibBizLogic\MyHomeLibBizLogic.Test\bin\D
 F:\MyRepository\MyHomeLibBizLogic\MyHomeLibBizLogic\MyHomeLibBizLogic.Test\bin\Debug\DotNetZip.dll
 F:\MyRepository\MyHomeLibBizLogic\MyHomeLibBizLogic\MyHomeLibBizLogic.Test\bin\Debug\DotNetZip.pdb
 F:\MyRepository\MyHomeLibBizLogic\MyHomeLibBizLogic\MyHomeLibBizLogic.Test\bin\Debug\DotNetZip.xml
+F:\MyRepository\MyHomeLibBizLogic\MyHomeLibBizLogic\MyHomeLibBizLogic.Test\obj\Debug\MyHomeLibBizLogic.Test.csproj.AssemblyReference.cache

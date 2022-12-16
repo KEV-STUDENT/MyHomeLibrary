@@ -3,6 +3,7 @@ using System.IO;
 using System.Collections.Generic;
 using Ionic.Zip;
 using MyHLibBooks;
+using System.Diagnostics;
 
 namespace MyHLibFiles
 {
@@ -28,15 +29,24 @@ namespace MyHLibFiles
         public IEnumerable<HLibDiscItem> GetDiscItemsEnum()
         {
             HLibDiscItem discItem;
+            
+            Debug.WriteLine(zipArchive.Entries.Count);
+
             foreach (var item in zipArchive.Entries)
             {
                 try
                 {
                     discItem = HLibFactory.GetDiskItem(this, item);
                 }
-                catch (ExceptionAccess) { continue; }
-                catch (NotImplementedException) { continue; }
-                catch (NotSupportedException) { continue; }
+                catch (ExceptionAccess) {
+                    Debug.WriteLine("ExceptionAccess");
+                    continue; }
+                catch (NotImplementedException) {
+                    Debug.WriteLine("NotImplementedException");
+                    continue; }
+                catch (NotSupportedException) {
+                    Debug.WriteLine("NotSupportedException {0} {1}", this.FullName, item.FileName);
+                    continue; }
 
                 yield return discItem;                
             }

@@ -25,7 +25,6 @@ F:\MyRepository\MyHomeLibUI\MyHomeLibUI\bin\Debug\MyHomeLibUI.dll
 F:\MyRepository\MyHomeLibUI\MyHomeLibUI\bin\Debug\MyHomeLibUI.pdb
 F:\MyRepository\MyHomeLibUI\MyHomeLibUI\bin\Debug\MyHomeLibFiles.dll
 F:\MyRepository\MyHomeLibUI\MyHomeLibUI\bin\Debug\MyHomeLibFiles.pdb
-F:\MyRepository\MyHomeLibUI\MyHomeLibUI\obj\Debug\MyHomeLibUI.csprojAssemblyReference.cache
 F:\MyRepository\MyHomeLibUI\MyHomeLibUI\obj\Debug\FB2Page.g.cs
 F:\MyRepository\MyHomeLibUI\MyHomeLibUI\obj\Debug\OptionPage.g.cs
 F:\MyRepository\MyHomeLibUI\MyHomeLibUI\obj\Debug\SelectParamText.g.cs
@@ -44,3 +43,19 @@ F:\MyRepository\MyHomeLibUI\MyHomeLibUI\obj\Debug\MyHomeLibUI.csproj.CoreCompile
 F:\MyRepository\MyHomeLibUI\MyHomeLibUI\obj\Debug\MyHomeLibUI.csproj.CopyComplete
 F:\MyRepository\MyHomeLibUI\MyHomeLibUI\obj\Debug\MyHomeLibUI.dll
 F:\MyRepository\MyHomeLibUI\MyHomeLibUI\obj\Debug\MyHomeLibUI.pdb
+F:\MyRepository\MyHomeLibUI\MyHomeLibUI\bin\Debug\MyDBModel.dll
+F:\MyRepository\MyHomeLibUI\MyHomeLibUI\bin\Debug\DotNetZip.dll
+F:\MyRepository\MyHomeLibUI\MyHomeLibUI\bin\Debug\MyHomeLibCommon.dll
+F:\MyRepository\MyHomeLibUI\MyHomeLibUI\bin\Debug\EntityFramework.dll
+F:\MyRepository\MyHomeLibUI\MyHomeLibUI\bin\Debug\System.Data.SQLite.dll
+F:\MyRepository\MyHomeLibUI\MyHomeLibUI\bin\Debug\System.Data.SQLite.EF6.dll
+F:\MyRepository\MyHomeLibUI\MyHomeLibUI\bin\Debug\System.Data.SQLite.EF6.Migrations.dll
+F:\MyRepository\MyHomeLibUI\MyHomeLibUI\bin\Debug\MyDBModel.pdb
+F:\MyRepository\MyHomeLibUI\MyHomeLibUI\bin\Debug\MyDBModel.dll.config
+F:\MyRepository\MyHomeLibUI\MyHomeLibUI\bin\Debug\DotNetZip.pdb
+F:\MyRepository\MyHomeLibUI\MyHomeLibUI\bin\Debug\DotNetZip.xml
+F:\MyRepository\MyHomeLibUI\MyHomeLibUI\bin\Debug\MyHomeLibCommon.pdb
+F:\MyRepository\MyHomeLibUI\MyHomeLibUI\bin\Debug\EntityFramework.xml
+F:\MyRepository\MyHomeLibUI\MyHomeLibUI\bin\Debug\System.Data.SQLite.xml
+F:\MyRepository\MyHomeLibUI\MyHomeLibUI\bin\Debug\System.Data.SQLite.dll.config
+F:\MyRepository\MyHomeLibUI\MyHomeLibUI\obj\Debug\MyHomeLibUI.csproj.AssemblyReference.cache

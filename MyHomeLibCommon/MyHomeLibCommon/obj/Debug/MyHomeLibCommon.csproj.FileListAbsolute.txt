@@ -3,3 +3,4 @@ F:\MyRepository\MyHomeLibCommon\MyHomeLibCommon\bin\Debug\MyHomeLibCommon.pdb
 F:\MyRepository\MyHomeLibCommon\MyHomeLibCommon\obj\Debug\MyHomeLibCommon.csproj.CoreCompileInputs.cache
 F:\MyRepository\MyHomeLibCommon\MyHomeLibCommon\obj\Debug\MyHomeLibCommon.dll
 F:\MyRepository\MyHomeLibCommon\MyHomeLibCommon\obj\Debug\MyHomeLibCommon.pdb
+F:\MyRepository\MyHomeLibCommon\MyHomeLibCommon\obj\Debug\MyHomeLibCommon.csproj.AssemblyReference.cache

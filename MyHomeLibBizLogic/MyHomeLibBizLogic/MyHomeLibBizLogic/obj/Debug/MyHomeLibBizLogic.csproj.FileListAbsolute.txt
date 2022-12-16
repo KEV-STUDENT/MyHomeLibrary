@@ -41,7 +41,6 @@ F:\MyRepository\MyHomeLibBizLogic\MyHomeLibBizLogic\MyHomeLibBizLogic\bin\Debug\
 F:\MyRepository\MyHomeLibBizLogic\MyHomeLibBizLogic\MyHomeLibBizLogic\bin\Debug\EntityFramework.SqlServer.xml
 F:\MyRepository\MyHomeLibBizLogic\MyHomeLibBizLogic\MyHomeLibBizLogic\bin\Debug\System.Data.SQLite.xml
 F:\MyRepository\MyHomeLibBizLogic\MyHomeLibBizLogic\MyHomeLibBizLogic\bin\Debug\System.Data.SQLite.dll.config
-F:\MyRepository\MyHomeLibBizLogic\MyHomeLibBizLogic\MyHomeLibBizLogic\obj\Debug\MyHomeLibBizLogic.csprojAssemblyReference.cache
 F:\MyRepository\MyHomeLibBizLogic\MyHomeLibBizLogic\MyHomeLibBizLogic\obj\Debug\MyHomeLibBizLogic.csproj.CoreCompileInputs.cache
 F:\MyRepository\MyHomeLibBizLogic\MyHomeLibBizLogic\MyHomeLibBizLogic\obj\Debug\MyHomeLibBizLogic.csproj.CopyComplete
 F:\MyRepository\MyHomeLibBizLogic\MyHomeLibBizLogic\MyHomeLibBizLogic\obj\Debug\MyHomeLibBizLogic.dll
@@ -51,3 +50,4 @@ F:\MyRepository\MyHomeLibBizLogic\MyHomeLibBizLogic\MyHomeLibBizLogic\bin\Debug\
 F:\MyRepository\MyHomeLibBizLogic\MyHomeLibBizLogic\MyHomeLibBizLogic\bin\Debug\DotNetZip.dll
 F:\MyRepository\MyHomeLibBizLogic\MyHomeLibBizLogic\MyHomeLibBizLogic\bin\Debug\DotNetZip.pdb
 F:\MyRepository\MyHomeLibBizLogic\MyHomeLibBizLogic\MyHomeLibBizLogic\bin\Debug\DotNetZip.xml
+F:\MyRepository\MyHomeLibBizLogic\MyHomeLibBizLogic\MyHomeLibBizLogic\obj\Debug\MyHomeLibBizLogic.csproj.AssemblyReference.cache

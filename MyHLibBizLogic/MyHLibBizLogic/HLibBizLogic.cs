@@ -1,9 +1,9 @@
-﻿using MyHLibFiles;
-using Ionic.Zip;
+﻿using MyHLibBooks;
+using MyHLibFiles;
 using System;
 using System.Collections.Generic;
-using MyHLibBooks;
 using System.Threading.Tasks;
+using System.Diagnostics;
 
 namespace MyHLibBizLogic
 {
@@ -23,19 +23,76 @@ namespace MyHLibBizLogic
 
         public HLibDiscItem FirstDiskItem { get => _firstDiskItem; }
 
-        public IEnumerable<IData> GetData()
+        public List<IData> GetData()
         {
-            //var collection = new Coll
-            if(_firstDiskItem is IHLibDirectoryArchive dirArch)
-            {
-                //List<Task<IData>> tasks = new List<Task<IData>>();
+            return LoadDataFromDiskItem(_firstDiskItem);
+        }
+
+        private List<IData> LoadDataFromDiskItem(HLibDiscItem diskItem)
+        {
+            List<IData> result = new List<IData>();
+            List<Task<IData>> tasks;
+            Task finalTask;
+
+            if (diskItem is IHLibDirectoryArchive dirArch)
+            {                
+                tasks = new List<Task<IData>>();
+                
+                Debug.WriteLine(diskItem.FullName);
 
                 foreach(var item in dirArch.GetDiscItemsEnum())
                 {
-                    if(item is IHLibFileWithData fileData)
+                    if (item is IHLibFileWithData fileData)
                     {
-                        //tasks.Add(fileData.GetDataFromFileAsync());
-                        yield return fileData.GetDataFromFile();
+                        tasks.Add(fileData.GetDataFromFileAsync());                        
+                    }
+                    else if(item is IHLibDirectoryArchive dirZip)
+                    {                       
+                        foreach (var task in GetTaskForDirectory(dirZip))
+                        {
+                            tasks.Add(task);
+                        }
+                    }
+                }
+
+                if (tasks.Count > 0)
+                {
+                    finalTask = Task.Factory.ContinueWhenAll(tasks.ToArray(),
+                        comlitedTasks =>
+                        {
+                            foreach (var t in comlitedTasks)
+                            {
+                                result.Add(t.Result);
+                            }
+                        });
+                    finalTask.Wait();
+                }
+            }
+            else if(diskItem is IHLibFileWithData fileData)
+            {
+                result.Add(fileData.GetDataFromFile());
+            }
+            else
+            {
+                throw new NotSupportedException();
+            }
+            
+            return result;
+        }
+
+        private IEnumerable<Task<IData>> GetTaskForDirectory(IHLibDirectoryArchive dirArch)
+        {
+            foreach (var item in dirArch.GetDiscItemsEnum())
+            {
+                if (item is IHLibFileWithData fileData)
+                {
+                    yield return fileData.GetDataFromFileAsync();
+                }
+                else if (item is IHLibDirectoryArchive dirZip)
+                {
+                    foreach (var task in GetTaskForDirectory(dirZip))
+                    {
+                        yield return task;
                     }
                 }
             }

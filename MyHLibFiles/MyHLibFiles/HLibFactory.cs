@@ -2,6 +2,8 @@
 using System.IO;
 using System.Linq;
 using Ionic.Zip;
+using System.Diagnostics;
+using System.Text;
 
 namespace MyHLibFiles
 {
@@ -9,6 +11,7 @@ namespace MyHLibFiles
     {
         static readonly byte[] zipSignature = { 0x50, 0x4B, 0x03, 0x04 };
         static readonly byte[] fb2Signature = { 0x3C, 0x3F, 0x78, 0x6D, 0x6C, 0x20 };
+        static readonly object locker = new object();
 
         public static HLibDiscItem GetDiskItem(string path, string name)
         {
@@ -101,17 +104,53 @@ namespace MyHLibFiles
             }
             else
             {
+
+                string file = "";
                 using (var st = entry.OpenReader())
                 {
                     byte[] bt = new byte[6];
                     st.Read(bt, 0, 6);
-                    if (Enumerable.SequenceEqual(bt, fb2Signature))
+                    Encoding encoding = GetEncoding(bt);
+                    file = encoding.GetString(bt, 0, bt.Length);
+                }
+
+
+                    if (file.ToLower().Trim(' ').Substring(1, 4) == "?xml")
                     {
                         return new HLibFileFB2(zip, entry, excl);
                     }
-                }                
+
+                    Debug.WriteLine("|" + file.ToLower().Trim(' ').Substring(1, 5) + "|");
+                    Debug.WriteLine(file.ToLower().Trim(' ').Substring(1, 5) == "<?xml");
+                    Debug.WriteLine(file.ToLower().Trim(' ').Substring(1, 6) == "<? xml");
+                    Debug.WriteLine(String.Compare(file.Trim(' ').Substring(1, 5), "<?xml",
+                       true, new System.Globalization.CultureInfo("en-US")));
+                    //StringComparison.OrdinalIgnoreCase));
+                    Debug.WriteLine("{0}  -  {1}", file.Trim(' ').Substring(1, 5).Length, "<?xml".Length);
+                
             }
             throw new NotSupportedException();
+        }
+
+        public static Encoding GetEncoding(byte[] byte4book)
+        {
+            Encoding encoding = Encoding.Default;
+            if (byte4book.Length > 37)
+            {
+                if ((byte4book[30] == 85 || byte4book[30] == 117) &&
+                    (byte4book[31] == 84 || byte4book[31] == 116) &&
+                    (byte4book[32] == 70 || byte4book[32] == 102) &&
+                    byte4book[33] == 45 && byte4book[34] == 56 && byte4book[35] == 34 &&
+                    byte4book[36] == 63 && byte4book[37] == 62)
+                {
+                    encoding = Encoding.UTF8;
+                }
+                else
+                {
+                    encoding = Encoding.GetEncoding("Windows-1251");
+                }
+            }
+            return encoding;
         }
     }
 }

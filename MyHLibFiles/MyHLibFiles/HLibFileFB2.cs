@@ -1,13 +1,12 @@
-﻿using System;
-using Ionic.Zip;
-using System.Xml;
+﻿using Ionic.Zip;
+using MyHLibBooks;
+using MyHomeLibCommon;
+using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Text;
-using System.Diagnostics;
-using System.Collections.Generic;
-using MyHomeLibCommon;
-using MyHLibBooks;
 using System.Threading.Tasks;
+using System.Xml;
 
 namespace MyHLibFiles
 {
@@ -205,23 +204,14 @@ namespace MyHLibFiles
 
         private Encoding GetEncoding(byte[] byte4book)
         {
-            Encoding encoding = Encoding.Default;
-            if (byte4book.Length > 37)
+            Encoding encoding = HLibFactory.GetEncoding(byte4book);
+            if (encoding == Encoding.UTF8)
             {
-                if ((byte4book[30] == 85 || byte4book[30] == 117) &&
-                    (byte4book[31] == 84 || byte4book[31] == 116) &&
-                    (byte4book[32] == 70 || byte4book[32] == 102) &&
-                    byte4book[33] == 45 && byte4book[34] == 56 && byte4book[35] == 34 &&
-                    byte4book[36] == 63 && byte4book[37] == 62)
-                {
-                    encoding = Encoding.UTF8;
-                    this.encoding = ItemEncoding.utf8;
-                }
-                else
-                {
-                    encoding = Encoding.GetEncoding("Windows-1251");
-                    this.encoding = ItemEncoding.win1251;
-                }
+                this.encoding = ItemEncoding.utf8;
+            }
+            else
+            {
+                this.encoding = ItemEncoding.win1251;
             }
             return encoding;
         }

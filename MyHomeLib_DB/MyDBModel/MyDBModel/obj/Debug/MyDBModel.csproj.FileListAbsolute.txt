@@ -31,10 +31,10 @@ F:\MyRepository\MyHomeLib_DB\MyDBModel\MyDBModel\bin\Debug\EntityFramework.xml
 F:\MyRepository\MyHomeLib_DB\MyDBModel\MyDBModel\bin\Debug\EntityFramework.SqlServer.xml
 F:\MyRepository\MyHomeLib_DB\MyDBModel\MyDBModel\bin\Debug\System.Data.SQLite.xml
 F:\MyRepository\MyHomeLib_DB\MyDBModel\MyDBModel\bin\Debug\System.Data.SQLite.dll.config
-F:\MyRepository\MyHomeLib_DB\MyDBModel\MyDBModel\obj\Debug\MyDBModel.csprojAssemblyReference.cache
 F:\MyRepository\MyHomeLib_DB\MyDBModel\MyDBModel\obj\Debug\MyDBModel.csproj.CoreCompileInputs.cache
 F:\MyRepository\MyHomeLib_DB\MyDBModel\MyDBModel\obj\Debug\MyDBModel.csproj.CopyComplete
 F:\MyRepository\MyHomeLib_DB\MyDBModel\MyDBModel\obj\Debug\MyDBModel.dll
 F:\MyRepository\MyHomeLib_DB\MyDBModel\MyDBModel\obj\Debug\MyDBModel.pdb
 F:\MyRepository\MyHomeLib_DB\MyDBModel\MyDBModel\bin\Debug\MyHomeLibCommon.dll
 F:\MyRepository\MyHomeLib_DB\MyDBModel\MyDBModel\bin\Debug\MyHomeLibCommon.pdb
+F:\MyRepository\MyHomeLib_DB\MyDBModel\MyDBModel\obj\Debug\MyDBModel.csproj.AssemblyReference.cache
